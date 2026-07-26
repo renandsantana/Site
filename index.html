@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <!-- Ícone do WhatsApp -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- ìcone threads-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -42,6 +44,7 @@
     <div class="hero-content">
         <img src="jc.png"  class="hero-logo">
       <h1 class="gold-text">— MEGA ABSOLUTTA —</h1>
+      <h1 class="subtitulo-autor">por Josiane Cristina</h1>
     </div>
   </section>
 
@@ -57,7 +60,7 @@
   <div class="badge">
     <div class="badge-header">
       <!-- Ícone de Saúde -->
-      <img src="" alt="Saúde" class="badge-icon">
+      <img src="saude.png" alt="Saúde" class="badge-icon">
       <span class="badge-title">Saúde</span>
     </div>
     <p class="badge-text">A saúde dos seus fios é prioridade em cada atendimento. Utilizamos apenas cabelos naturais selecionados e técnicas que respeitam a estrutura do cabelo e do couro cabeludo.</p>
@@ -66,7 +69,7 @@
   <div class="badge">
     <div class="badge-header">
       <!-- Ícone de Qualidade -->
-      <img src="" alt="Qualidade" class="badge-icon">
+      <img src="qualidade.png" alt="Qualidade" class="badge-icon">
       <span class="badge-title">Qualidade</span>
     </div>
     <p class="badge-text">Uma seleção criteriosa de cabelos naturais, com diferentes espessuras, comprimentos e características. Cada escolha é feita para garantir um acabamento harmonioso, sofisticado e perfeitamente compatível com o cabelo da cliente.
@@ -76,7 +79,7 @@
   <div class="badge">
     <div class="badge-header">
       <!-- Ícone de Segurança -->
-      <img src="" alt="Segurança" class="badge-icon">
+      <img src="escudo.png" alt="Segurança" class="badge-icon">
       <span class="badge-title">Segurança</span>
     </div>
     <p class="badge-text">A avaliação personalizada é uma etapa essencial do nosso processo. Ela nos permite definir a técnica, a quantidade e o tipo de cabelo ideais, proporcionando um procedimento seguro, preciso e respeitando as características de cada cliente.</p>
@@ -85,7 +88,7 @@
   <div class="badge">
     <div class="badge-header">
       <!-- Ícone de Tecnologia -->
-      <img src="" alt="Tecnologia" class="badge-icon">
+      <img src="tech.png" alt="Tecnologia" class="badge-icon">
       <span class="badge-title">Tecnologia</span>
     </div>
     <p class="badge-text">Aplicamos técnicas modernas e constantemente aprimoradas para proporcionar mais conforto, naturalidade e durabilidade. Cada procedimento é executado com precisão para garantir um resultado seguro e imperceptível.</p>
@@ -93,7 +96,37 @@
   </section>
 
   <!-- SEÇÃO: CONCEITO & EXPERIÊNCIA (SOBRE NÓS) -->
-  <section id="sobre" class="conceito section-padding dark-bg">
+  <!-- SEÇÃO: CONCEITO & EXPERIÊNCIA (SOBRE NÓS DECORADA) -->
+  <section id="sobre" class="conceito section-padding dark-bg secao-decorada">
+    
+    <!-- ELEM. DECORATIVO 1: Curva Orgânica Dourada no Canto Superior Direito -->
+    <svg class="decoracao-curva topo-direito" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M190 0C190 120 80 180 10 300" stroke="url(#gold-grad)" stroke-width="2.5" opacity="0.85"/>
+      <defs>
+        <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#bf953f" />
+          <stop offset="50%" stop-color="#fcf6ba" />
+          <stop offset="100%" stop-color="#aa771c" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- ELEM. DECORATIVO 2: Ramo Botânico Dourado no Canto Inferior Esquerdo -->
+    <svg class="decoracao-ramo base-esquerda" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 190 C 40 130, 80 70, 90 10" stroke="url(#gold-grad-botanico)" stroke-width="2" opacity="0.9"/>
+      <path d="M30 150 C 15 135, 10 120, 30 130 C 45 135, 40 145, 30 150 Z" fill="url(#gold-grad-botanico)" opacity="0.85"/>
+      <path d="M52 110 C 68 95, 75 85, 58 92 C 45 100, 48 108, 52 110 Z" fill="url(#gold-grad-botanico)" opacity="0.85"/>
+      <path d="M70 65 C 55 50, 50 35, 70 45 C 82 50, 78 60, 70 65 Z" fill="url(#gold-grad-botanico)" opacity="0.85"/>
+      <defs>
+        <linearGradient id="gold-grad-botanico" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#b38728" />
+          <stop offset="50%" stop-color="#fcf6ba" />
+          <stop offset="100%" stop-color="#bf953f" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- CONTEÚDO REAL DA SEÇÃO -->
     <div class="container grid-2">
       <div class="conceito-img">
         <img src="jc.png" alt="Mega Absolutta - Experiência que transforma">
@@ -114,17 +147,22 @@
       </div>
     </div>
   </section>
+
+  <!-- LINHA DIVISÓRIA -->
+<hr class="linha-divisoria">
+
   <!-- SEÇÃO: NOSSAS LINHAS -->
 
   <!-- SEÇÃO DE DETALHES COM AS SUAS NOVAS CLASSES -->
 <section id="secao-detalhe" class="detalhe-modelo">
+<!-- 1. TÍTULO AQUI FORA (Acima da div das colunas) -->
+  <h2 class="subtitulo-secao">NOSSAS LINHAS</h2>
   <div class="container-detalhe">
     <!-- Lado Esquerdo: Textos -->
     <div class="detalhe-texto">
-      <span class="subtitulo">NOSSAS LINHAS</span>
       <h2 id="detalhe-titulo" class="titulo-modelo">regional</h2>
       <p id="detalhe-descricao">
-              descricao: 'Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.',
+            Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.
       </p>
     </div>
 
@@ -143,22 +181,22 @@
 
       <div class="card-modelo" onclick="trocarModelo('regional')">
         <img src="regionalbrasil.png" alt="Brasileiros Regionais" class="img-produto">
-        <h3>Nossa linha<br><strong class="gold-text">brasileiros regionais</strong></h3>
+        <h3><strong class="gold-text">brasileiros regionais</strong></h3>
       </div>
 
       <div class="card-modelo" onclick="trocarModelo('sul')">
         <img src="brasileirosul.png" alt="Brasileiros do Sul" class="img-produto">
-        <h3>Nossa linha<br><strong class="gold-text">brasileiros do sul</strong></h3>
+        <h3><strong class="gold-text">brasileiros do sul</strong></h3>
       </div>
 
       <div class="card-modelo" onclick="trocarModelo('vietnamita')">
         <img src="vietnamita.png" alt="Vietnamitas" class="img-produto">
-        <h3>Nossa linha<br><strong class="gold-text">Vietnamitas</strong></h3>
+        <h3><strong class="gold-text">Vietnamitas</strong></h3>
       </div>
 
       <div class="card-modelo" onclick="trocarModelo('personalizados')">
         <img src="personalizados.png" alt="Personalizados" class="img-produto">
-        <h3>Nossa linha<br><strong class="gold-text">Personalizados</strong></h3>
+        <h3><strong class="gold-text">Personalizados</strong></h3>
       </div>
 
     </div>
@@ -187,15 +225,19 @@
       <!-- Coluna 3: Onde Estamos -->
       <div class="footer-col">
         <h4 class="gold-text">onde estamos?</h4>
-        <p>coloca endereço completo do studio</p>
+        <p>UNIDADE 1<p>
+        <p>Rua Uberaba, 187 - Centro - Araxá - MG</p>
+        <br>
+        <p>UNIDADE 2<p>
+        <p>Praça Cornélio Pires, 91 - Sala 8 - Jardim América -Ribeirão Preto - SP</p>
         <p class="horario">Seg a Sex de 08hrs às 18hrs</p>
       </div>
       <!-- Coluna 4: Nossas Redes -->
       <div class="footer-col">
         <h4 class="gold-text">nossas redes</h4>
         <div class="social-links">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/mega_absolutta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.threads.net/@mega_absolutta"><i class="fa-brands fa-threads"></i></a>
         </div>
       </div>
     </div>
@@ -205,7 +247,7 @@
   </footer>
 
   <!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a href="https://wa.me/55DDDNUMERO?text=Olá!%20Gostaria%20de%20mais%20informações." class="whatsapp-btn" target="_blank" rel="noopener">
+<a href="https://api.whatsapp.com/send?phone=5516996207228" class="whatsapp-btn" target="_blank" rel="noopener">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 

@@ -6,7 +6,7 @@
 }
 
 :root {
-  --bg-dark: #0f0f0f;
+  --bg-dark: #000000;
   --bg-card: #030303;
   --text-color: #e0e0e0;
   --gold-primary: #d4af37;
@@ -120,10 +120,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: #000000;
   backdrop-filter: blur(5px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
 }
 
 .nav-container {
@@ -202,6 +202,7 @@ body {
 
 /* HERO SECTION */
 .hero {
+  margin-top: 40px;
   height: 50vh;
   background: url('img/hero-bg.jpg') center/cover no-repeat;
   position: relative;
@@ -213,7 +214,7 @@ body {
 .hero-overlay {
   position: absolute;
   top:0; left:0; width:100%; height:100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #000000;
   z-index: 2;
 }
 
@@ -294,8 +295,8 @@ body {
 
 /* O card de cada badge */
 .badge {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: #000000;
+  border: 2px solid rgba(212, 175, 55, 0.2);
   border-radius: 8px;
   padding: 16px;
   display: flex;
@@ -314,6 +315,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px; /* Ajuste o número de pixels até ficar do tamanho que deseja */
 }
 
 /* Ícone */
@@ -352,7 +354,7 @@ body {
 
 /* CONCEITO (GRID DE 2 COLUNAS) */
 .dark-bg {
-  background-color: #141414;
+  background-color: #000000;
 }
 
 .badge-icon {
@@ -372,7 +374,7 @@ body {
 .conceito-img img {
   width: 100%;
   border-radius: 12px;
-  border: 1fr solid var(--gold-primary);
+  border: 2px solid var(--gold-primary);
 }
 
 .conceito-text p {
@@ -443,9 +445,12 @@ body {
 }
 
 .detalhe-texto .subtitulo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  /* Estilo para centralizar o "NOSSAS LINHAS" */
+  text-align: center;         /* Centraliza o texto */
+  letter-spacing: 3px;        /* Espaçamento entre as letras para estilo moderno */
+  margin-bottom: 40px;        /* Espaço abaixo do título para separar da imagem e texto */
+  font-family: 'Montserrat';
+  font-size: 3rem;
   text-transform: uppercase;
   color: #ffffff;
   display: block;
@@ -476,9 +481,45 @@ body {
 }
 
 .detalhe-imagem img {
-  max-width: 300px;            /* Tamanho ajustado para economizar espaço vertical */
+max-width: 100%;
   height: auto;
-  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease-in-out;
+
+  /* --- NOVAS PROPRIEDADES --- */
+  border-radius: 12px; /* Arredonda os cantos da imagem */
+  border: 1px solid #d4af37; /* Adiciona uma borda fina na cor dourada (opcional) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Cria uma sombra suave para destacar do fundo preto */
+}
+/* Container pai que junta Texto + Imagem */
+.container-detalhe {
+  display: flex; /* Coloca o bloco de texto e a imagem lado a lado */
+  align-items: center; /* Centraliza a imagem e o texto no eixo VERTICAL */
+  justify-content: space-between; /* Distribui o espaço entre texto e imagem */
+  gap: 40px; /* Distância/espaço de respiro entre o texto e a imagem */
+  max-width: 1200px; /* Largura máxima da seção para não espalhar demais */
+  margin: 0 auto; /* Centraliza a seção na página */
+  padding: 0 20px;
+}
+
+/* Lado Esquerdo: Bloco de Texto */
+.detalhe-texto {
+  flex: 1; /* Ocupa o espaço disponível à esquerda */
+}
+
+/* Lado Direito: Container da Imagem */
+.detalhe-imagem {
+  flex: 1; /* Ocupa o espaço disponível à direita */
+  display: flex;
+  justify-content: center; /* Centraliza a imagem dentro da div dela */
+}
+
+/* Regra para a imagem se ajustar de forma fluida */
+.detalhe-imagem img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease-in-out; /* Garante o efeito de transição suave do script */
 }
 
 /* =========================================================
@@ -513,17 +554,17 @@ body {
 
 /* Padronização da imagem nos cards inferiores */
 .card-modelo .img-produto {
-  width: 100px;                /* Tamanho fixo para todas as fotos dos cards */
-  height: 100px;               /* Garante que todas tenham a mesma altura */
+  width: 150px;                /* Tamanho fixo para todas as fotos dos cards */
+  height: 150px;               /* Garante que todas tenham a mesma altura */
   object-fit: contain;
-  margin-bottom: 8px;          /* Espaço pequeno e controlado até o texto */
+  margin-bottom: 0.1rem;          /* Espaço pequeno e controlado até o texto */
   display: block;
 }
 
 /* Zerando margens dos títulos dos cards */
 .card-modelo h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -562,9 +603,9 @@ body {
 
 /* FOOTER */
 .footer {
-  background: #080808;
+  background: #000000;
   padding: 60px 0 20px 0;
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-top: 2px solid rgba(212, 175, 55, 0.2);
 }
 
 .grid-4-footer {
@@ -692,4 +733,93 @@ body {
   .hero-content h1 {
     font-size: 2rem;
   }
+}
+/* =========================================================
+   AJUSTE DE CENTRALIZAÇÃO DO TÍTULO "NOSSAS LINHAS"
+   ========================================================= */
+
+/* Força a seção a organizar os elementos na vertical (Título no topo, Conteúdo embaixo) */
+.detalhe-modelo {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+/* Garante a centralização perfeita do título de ponta a ponta na tela */
+.subtitulo-secao {
+  text-align: center !important;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+.linha-divisoria {
+  border: 0;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.3); /* Dourado suave */
+  width:100%;
+  max-width: 100%;
+  margin: 40px auto; /* Centraliza a linha e dá espaço em cima e embaixo */
+}
+.subtitulo-autor {
+  font-size: 0.85rem !important;           /* Reduz o tamanho da fonte */
+  letter-spacing: 4px;          /* Aumenta o espaçamento entre as letras (dá um ar sofisticado) */
+  text-transform: none;    /* Deixa em caixa alta se desejar, ou remova esta linha se preferir minúsculo */
+  color: #cccccc;               /* Tom cinza claro/suave */
+  margin-top: 5px;              /* Aproxima o texto do logo/título acima */
+  font-weight: 300;             /* Deixa a fonte mais fina */
+}
+/* Aplica tom dourado em imagens pretas/brancas via CSS */
+.badge-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Converte para tom dourado */
+}
+/* =========================================================
+   ELEMENTOS DECORATIVOS LUXO / BOTÂNICOS (ESTILO CATÁLOGO)
+   ========================================================= */
+
+/* Torna a seção a referência de posição para os elementos flutuantes */
+.secao-decorada {
+  position: relative;
+  overflow: hidden; /* Evita que as curvas criem barra de rolagem lateral */
+}
+
+/* Fio Curvo Dourado no Canto Superior */
+.decoracao-curva {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 180px;
+  height: auto;
+  pointer-events: none; /* Não atrapalha cliques do usuário */
+  z-index: 1;
+}
+
+/* Ramo Botânico no Canto Inferior */
+.decoracao-ramo {
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.5));
+}
+
+/* Garante que o texto e imagens fiquem na frente dos elementos decorativos */
+.secao-decorada .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ajuste sutil para celulares */
+@media (max-width: 768px) {
+  .decoracao-curva { width: 110px; }
+  .decoracao-ramo { width: 85px; }
 }
