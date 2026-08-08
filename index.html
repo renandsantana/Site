@@ -8,12 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     /* =========================================================
-       VARIÁVEIS DE DESIGN E PALETA LUXO (DARK & GOLD)
+       VARIÁVEIS DE DESIGN E PALETA LUXO
        ========================================================= */
     :root {
       --bg-dark: #0a0a0a;
@@ -31,7 +30,6 @@
       --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Reset Geral */
     * {
       margin: 0;
       padding: 0;
@@ -47,20 +45,9 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
     .container {
       width: 90%;
@@ -68,14 +55,8 @@
       margin: 0 auto;
     }
 
-    .section-padding {
-      padding: 100px 0;
-    }
-
-    .gold-text {
-      color: var(--gold-primary);
-    }
-
+    .section-padding { padding: 100px 0; }
+    .gold-text { color: var(--gold-primary); }
     .gold-subtitle {
       color: var(--gold-primary);
       text-transform: uppercase;
@@ -95,7 +76,7 @@
     }
 
     /* =========================================================
-       Navegação (Header & Navbar)
+       NAVBAR
        ========================================================= */
     .navbar {
       position: fixed;
@@ -124,11 +105,7 @@
       color: #fff;
     }
 
-    .nav-menu {
-      display: flex;
-      gap: 30px;
-    }
-
+    .nav-menu { display: flex; gap: 30px; }
     .nav-link {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -136,10 +113,7 @@
       color: var(--text-muted);
       transition: var(--transition);
     }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--gold-primary);
-    }
+    .nav-link:hover, .nav-link.active { color: var(--gold-primary); }
 
     .btn-gold {
       background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
@@ -161,60 +135,6 @@
       box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
     }
 
-    /* =========================================================
-       Hero Section
-       ========================================================= */
-    .hero {
-      min-height: 100vh;
-      padding-top: 140px;
-      padding-bottom: 80px;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .hero-tag {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--gold-primary);
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .hero-title {
-      font-family: var(--font-title);
-      font-size: 4rem;
-      line-height: 1.1;
-      margin-bottom: 25px;
-      font-weight: 400;
-    }
-
-    .hero-title span {
-      font-style: italic;
-      font-weight: 700;
-    }
-
-    .hero-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin-bottom: 35px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
     .btn-outline {
       border: 1px solid var(--border-color);
       padding: 12px 28px;
@@ -223,57 +143,141 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       transition: var(--transition);
+      color: #fff;
     }
-
-    .btn-outline:hover {
-      border-color: var(--gold-primary);
-      color: var(--gold-primary);
-    }
-
-    .hero-image-wrapper {
-      position: relative;
-    }
-
-    .hero-image-wrapper img {
-      border-radius: 8px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+    .btn-outline:hover { border-color: var(--gold-primary); color: var(--gold-primary); }
 
     /* =========================================================
-       Ticker Infinite Scroll Banner
+       HERO SECTION (CORRIGIDO: IMAGEM FULL-HEIGHT & SANGRADA)
+       ========================================================= */
+    #home.hero {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 50px);
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      background-color: var(--bg-dark);
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    /* Conteúdo de Texto à Esquerda */
+    .hero-content-wrapper {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: 6vw;
+      pointer-events: none;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      pointer-events: auto;
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      line-height: 1.05;
+      margin-bottom: 25px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    .hero-title span { font-style: italic; font-weight: 700; }
+    .hero-desc { color: var(--text-muted); font-size: 1rem; line-height: 2; margin-bottom: 50px; }
+    .hero-actions { display: flex; gap: 15px; align-items: center; margin-bottom: 35px; }
+
+    .scroll-indicator {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .scroll-indicator::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    /* Imagem de Fundo Sangrada na Direita */
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65vw; /* Ajuste a largura da área da foto conforme preferir */
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end; /* Encosta a imagem na direita */
+}
+
+.hero-bg-image img {
+  width: 70%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover; /* Mostra a foto inteira na vertical sem cortes */
+  object-position: center top;
+
+  /* APLICANDO A TRANSPARÊNCIA DIRETO NA IMAGEM: */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 15%, #000 45%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 15%, #000 45%);
+}
+
+    /* =========================================================
+       TICKER
        ========================================================= */
     .ticker-bar {
       background: var(--bg-card);
-      border-y: 1px solid var(--border-color);
-      padding: 18px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
       overflow: hidden;
       white-space: nowrap;
+      width: 100%;
     }
 
     .ticker-track {
       display: flex;
-      gap: 40px;
-      animation: ticker 25s linear infinite;
+      gap: 30px;
+      width: max-content;
+      animation: ticker-scroll 22s linear infinite;
     }
 
     .ticker-item {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--text-muted);
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 15px;
     }
+    .ticker-item span { color: var(--gold-primary); }
 
-    @keyframes ticker {
+    @keyframes ticker-scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
     /* =========================================================
-       Números & Estatísticas
+       NÚMEROS
        ========================================================= */
     .stats-section {
       padding: 60px 0;
@@ -303,7 +307,7 @@
     }
 
     /* =========================================================
-       Pilares de Diferenciais
+       PILARES
        ========================================================= */
     .pilar-badges {
       display: grid !important;
@@ -334,34 +338,13 @@
       transform: translateY(-4px);
     }
 
-    .badge-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
-    }
-
-    .badge-header i {
-      color: var(--gold-primary);
-      font-size: 1.2rem;
-    }
-
-    .badge-title {
-      color: #ffffff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .badge-text {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
+    .badge-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+    .badge-header i { color: var(--gold-primary); font-size: 1.2rem; }
+    .badge-title { color: #ffffff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .badge-text { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
 
     /* =========================================================
-       Conceito & Experiência
+       CONCEITO
        ========================================================= */
     .conceito-grid {
       display: grid;
@@ -381,7 +364,7 @@
     }
 
     /* =========================================================
-       Nossas Linhas (Galeria & Seletor Interativo)
+       LINHAS
        ========================================================= */
     .detalhe-modelo {
       background: var(--bg-card);
@@ -407,12 +390,7 @@
       line-height: 1;
     }
 
-    .descricao-linha {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
+    .descricao-linha { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
     .detalhe-imagem img {
       width: 100%;
       height: 380px;
@@ -422,12 +400,7 @@
       transition: opacity 0.3s ease;
     }
 
-    .grid-4-linhas {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
+    .grid-4-linhas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .card-modelo {
       background: var(--bg-card);
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -437,13 +410,11 @@
       cursor: pointer;
       transition: var(--transition);
     }
-
     .card-modelo:hover, .card-modelo.active {
       border-color: var(--gold-primary);
       transform: translateY(-5px);
       background: var(--bg-card-hover);
     }
-
     .card-modelo img {
       width: 100%;
       height: 160px;
@@ -451,7 +422,6 @@
       border-radius: 6px;
       margin-bottom: 15px;
     }
-
     .card-modelo h3 {
       font-size: 0.85rem;
       font-weight: 400;
@@ -459,24 +429,12 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-
-    .card-modelo h3 strong {
-      display: block;
-      color: var(--gold-primary);
-      font-size: 0.95rem;
-      margin-top: 4px;
-    }
+    .card-modelo h3 strong { display: block; color: var(--gold-primary); font-size: 0.95rem; margin-top: 4px; }
 
     /* =========================================================
-       Unidades / Onde Estamos
+       UNIDADES
        ========================================================= */
-    .unidades-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
+    .unidades-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
     .unidade-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -484,12 +442,7 @@
       padding: 40px;
       transition: var(--transition);
     }
-
-    .unidade-card:hover {
-      border-color: var(--gold-primary);
-      background: var(--bg-card-hover);
-    }
-
+    .unidade-card:hover { border-color: var(--gold-primary); background: var(--bg-card-hover); }
     .unidade-badge {
       display: inline-block;
       font-size: 0.75rem;
@@ -501,55 +454,22 @@
       border-radius: 20px;
       margin-bottom: 15px;
     }
-
-    .unidade-card h3 {
-      font-family: var(--font-title);
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-
-    .unidade-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 25px;
-    }
+    .unidade-card h3 { font-family: var(--font-title); font-size: 1.8rem; margin-bottom: 15px; }
+    .unidade-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px; }
 
     /* =========================================================
-       Rodapé
+       RODAPÉ
        ========================================================= */
     .footer {
       background: #050505;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       padding: 80px 0 30px 0;
     }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-col ul li a {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      transition: var(--transition);
-    }
-
-    .footer-col ul li a:hover {
-      color: var(--gold-primary);
-    }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
+    .footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: var(--text-muted); font-size: 0.85rem; transition: var(--transition); }
+    .footer-col ul li a:hover { color: var(--gold-primary); }
 
     .copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -560,7 +480,6 @@
       letter-spacing: 1px;
     }
 
-    /* Botão Flutuante do WhatsApp */
     .whatsapp-btn {
       position: fixed;
       bottom: 30px;
@@ -578,42 +497,41 @@
       z-index: 999;
       transition: var(--transition);
     }
+    .whatsapp-btn:hover { transform: scale(1.1); }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
-
-    /* Responsividade */
+    /* RESPONSIVIDADE */
     @media (max-width: 992px) {
-      .hero-grid, .conceito-grid, .container-detalhe, .unidades-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      #home.hero {
+        height: auto;
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 40px;
       }
-      
-      .hero-title {
-        font-size: 2.8rem;
+      .hero-content-wrapper { padding-left: 5%; padding-right: 5%; }
+      .hero-text { max-width: 100%; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .scroll-indicator { justify-content: center; }
+
+      .hero-bg-image {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin-top: 30px;
+        -webkit-mask-image: none;
+        mask-image: none;
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pilar-badges {
-        grid-template-columns: 1fr !important;
-      }
-
-      .grid-4-linhas {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .conceito-grid, .container-detalhe, .unidades-grid { grid-template-columns: 1fr; gap: 40px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .pilar-badges { grid-template-columns: 1fr !important; }
+      .grid-4-linhas { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
+  <!-- CABEÇALHO -->
   <header class="navbar">
     <div class="container nav-container">
       <div class="logo">
@@ -625,46 +543,58 @@
           <li><a href="#sobre" class="nav-link">SOBRE</a></li>
           <li><a href="#linhas" class="nav-link">LINHAS</a></li>
           <li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
-          <li><a href="cursos.html" class="nav-link">CURSO</a></li>
+          <li><a href="cursos.html" class="nav-link">CURSOS</a></li>
         </ul>
       </nav>
       <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
     </div>
   </header>
 
+  <!-- HERO SECTION (ESTRUTURA LIMPA SEM DIVS CONFLITANTES) -->
   <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <span class="hero-tag">Josiane Cristina · Mega Hair</span>
-          <h1 class="hero-title">Autoestima em <span>cada fio.</span></h1>
-          <p class="hero-desc">
-            Mais de 10 anos transformando a autoestima através da técnica exclusiva de Mega Hair — para clientes que buscam sofisticação e profissionais que querem dominar a arte.
-          </p>
-          <div class="hero-actions">
-            <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20atendimento." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
-            <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" class="btn-outline">@mega_absolutta</a>
-          </div>
-        </div>
-        <div class="hero-image-wrapper">
-          <img src="jc2.jpeg" alt="Josiane Cristina - Mega Absolutta">
+    
+    <!-- Texto na Esquerda -->
+    <div class="hero-content-wrapper">
+      <div class="hero-text">
+        <span class="hero-tag">Josiane Cristina · Mega Hair</span>
+        <h1 class="hero-title">Autoestima<br>em cada <span>fio.</span><br></h1>
+        <p class="hero-desc">
+          Mais de 10 anos transformando autoestima através da técnica de Mega Hair — para clientes que querem se ver, e para profissionais que querem aprender.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20atendimento." target="_blank" rel="noopener" class="btn-gold">
+            Agendar Horário
+          </a>
+          <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" class="btn-outline">
+            @mega_absolutta
+          </a>
         </div>
       </div>
     </div>
+
+    <!-- Imagem Sangrada Ocupando a Direita -->
+    <div class="hero-bg-image">
+      <img src="jc3.jpeg" alt="Josiane Cristina - Mega Hair">
+    </div>
+
   </section>
 
+  <!-- TICKER PASSANDO INFORMAÇÕES -->
   <div class="ticker-bar">
     <div class="ticker-track">
-      <div class="ticker-item">✦ +7.000 Atendimentos</div>
-      <div class="ticker-item">✦ +10 Anos de Experiência</div>
-      <div class="ticker-item">✦ Ribeirão Preto · Araxá</div>
-      <div class="ticker-item">✦ Cabelos Nacionais & Importados Selecionados</div>
-      <div class="ticker-item">✦ +7.000 Atendimentos</div>
-      <div class="ticker-item">✦ +10 Anos de Experiência</div>
-      <div class="ticker-item">✦ Ribeirão Preto · Araxá</div>
+      <div class="ticker-item">+7.000 atendimentos <span>✦</span></div>
+      <div class="ticker-item">+10 anos de experiência <span>✦</span></div>
+      <div class="ticker-item">11,3 mil seguidoras <span>✦</span></div>
+      <div class="ticker-item">Ribeirão Preto · Araxá <span>✦</span></div>
+      <div class="ticker-item">+7.000 atendimentos <span>✦</span></div>
+      <div class="ticker-item">+10 anos de experiência <span>✦</span></div>
+      <div class="ticker-item">11,3 mil seguidoras <span>✦</span></div>
+      <div class="ticker-item">Ribeirão Preto · Araxá <span>✦</span></div>
     </div>
   </div>
 
+  <!-- NÚMEROS -->
   <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
@@ -688,6 +618,7 @@
     </div>
   </section>
 
+  <!-- DIFERENCIAIS -->
   <section class="section-padding">
     <div class="container text-center">
       <span class="gold-subtitle" style="text-align: center;">Nossos Pilares</span>
@@ -732,11 +663,12 @@
     </div>
   </section>
 
+  <!-- CONCEITO -->
   <section id="sobre" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
       <div class="conceito-grid">
         <div>
-          <img src="jc4.png" alt="Sobre a Mega Absolutta" style="border-radius: 8px;">
+          <img src="jc1.png" alt="Sobre a Mega Absolutta" style="border-radius: 8px;">
         </div>
         <div>
           <span class="gold-subtitle">Conceito Mega Absolutta</span>
@@ -755,6 +687,7 @@
     </div>
   </section>
 
+  <!-- CATÁLOGO / LINHAS -->
   <section id="linhas" class="section-padding">
     <div class="container">
       <div style="text-align: center; margin-bottom: 40px;">
@@ -801,6 +734,7 @@
     </div>
   </section>
 
+  <!-- UNIDADES -->
   <section id="unidades" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
       <div style="text-align: center;">
@@ -827,12 +761,13 @@
             Atendimentos quinzenais com hora marcada.<br>
             Consulte a disponibilidade e garanta a sua data.
           </p>
-          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Arax%C3%A1." target="_blank" rel="noopener" class="btn-gold">Agendar em Araxá →</a>
+          <a href="https://api.whatsapp.com/send?phone=553488033811&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Arax%C3%A1." target="_blank" rel="noopener" class="btn-gold">Agendar em Araxá →</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- RODAPÉ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -846,7 +781,8 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre Nós</a></li>
             <li><a href="#linhas">Linhas de Cabelos</a></li>
-            <li><a href="#unidades">Unidades</a></li>
+            <li><a href="servico.html">Serviços</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -865,10 +801,11 @@
     </div>
   </footer>
 
-  <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
+  <a href="https://api.whatsapp.com/send?phone=5534880338118&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
+  <!-- SCRIPT SELETOR LINHAS -->
   <script>
     const dadosModelos = {
       regional: {
@@ -883,7 +820,7 @@
       },
       vietnamita: {
         titulo: 'vietnamita',
-        descricao: 'Conhecidos por sua resistência excepcional, densidade e brilho intenso, os cabelos vietnamitas possuem fios encorpados (de espessura média a grossa) com caimento impecável. Suportam bem estilizações e possuem altísima durabilidade.',
+        descricao: 'Conhecidos por sua resistência excepcional, densidade e brilho intenso, os cabelos vietnamitas possuem fios encorpados (de espessura média a grossa) com caimento impecável. Suportam bem estilizações e possuem altíssima durabilidade.',
         imagem: 'vietnamita_detalhe.png'
       },
       personalizados: {
