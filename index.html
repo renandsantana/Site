@@ -221,7 +221,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 65vw; /* Ajuste a largura da área da foto conforme preferir */
+  width: 100vw; /* Ajuste a largura da área da foto conforme preferir */
   height: 100%;
   z-index: 1;
   display: flex;
@@ -232,12 +232,12 @@
   width: 70%;
   height: 100%;
   max-width: none;
-  object-fit: cover; /* Mostra a foto inteira na vertical sem cortes */
+  object-fit: contain; /* Mostra a foto inteira na vertical sem cortes */
   object-position: center top;
 
   /* APLICANDO A TRANSPARÊNCIA DIRETO NA IMAGEM: */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 15%, #000 45%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 15%, #000 45%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 55%, #000 80%);
+  mask-image: linear-gradient(to left, transparent 20%, rgba(0, 0, 0, 0.5) 42%, #000 80%);
 }
 
     /* =========================================================
