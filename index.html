@@ -3,295 +3,914 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mega Absolutta - Mega Hair & Extensões</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Fonte do Google Fonts (Playfair Display para títulos elegantes e Montserrat para texto) -->
+  <title>Mega Absolutta | Josiane Cristina — Mega Hair & Extensões</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-  <!-- Ícone do WhatsApp -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- ìcone threads-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       VARIÁVEIS DE DESIGN E PALETA LUXO (DARK & GOLD)
+       ========================================================= */
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --bg-card-hover: #1c1c1c;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #aa820a;
+      --text-main: #f0f0f0;
+      --text-muted: #a0a0a0;
+      --border-color: rgba(212, 175, 55, 0.2);
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-hand: 'Caveat', cursive;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset Geral */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    .gold-text {
+      color: var(--gold-primary);
+    }
+
+    .gold-subtitle {
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    /* =========================================================
+       Navegação (Header & Navbar)
+       ========================================================= */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: var(--transition);
+      padding: 20px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #fff;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--gold-primary);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #000;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: var(--transition);
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    /* =========================================================
+       Hero Section
+       ========================================================= */
+    .hero {
+      min-height: 100vh;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold-primary);
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    .hero-title span {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 35px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-color);
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+    }
+
+    .hero-image-wrapper img {
+      border-radius: 8px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* =========================================================
+       Ticker Infinite Scroll Banner
+       ========================================================= */
+    .ticker-bar {
+      background: var(--bg-card);
+      border-y: 1px solid var(--border-color);
+      padding: 18px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 40px;
+      animation: ticker 25s linear infinite;
+    }
+
+    .ticker-item {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =========================================================
+       Números & Estatísticas
+       ========================================================= */
+    .stats-section {
+      padding: 60px 0;
+      background: rgba(255, 255, 255, 0.01);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      color: var(--gold-primary);
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================
+       Pilares de Diferenciais
+       ========================================================= */
+    .pilar-badges {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-auto-rows: 1fr !important;
+      gap: 20px !important;
+      max-width: 1000px !important;
+      margin: 40px auto 0 auto !important;
+      clear: both;
+    }
+
+    .pilar-badges .badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      text-align: left;
+      transition: var(--transition);
+    }
+
+    .pilar-badges .badge:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .badge-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .badge-header i {
+      color: var(--gold-primary);
+      font-size: 1.2rem;
+    }
+
+    .badge-title {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .badge-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       Conceito & Experiência
+       ========================================================= */
+    .conceito-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .quote-box {
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 20px;
+      margin: 30px 0;
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #fff;
+    }
+
+    /* =========================================================
+       Nossas Linhas (Galeria & Seletor Interativo)
+       ========================================================= */
+    .detalhe-modelo {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 50px;
+      margin-bottom: 40px;
+      transition: var(--transition);
+    }
+
+    .container-detalhe {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .titulo-modelo {
+      font-family: var(--font-hand);
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 15px;
+      line-height: 1;
+    }
+
+    .descricao-linha {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .detalhe-imagem img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: opacity 0.3s ease;
+    }
+
+    .grid-4-linhas {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card-modelo {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .card-modelo:hover, .card-modelo.active {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px);
+      background: var(--bg-card-hover);
+    }
+
+    .card-modelo img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .card-modelo h3 {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-modelo h3 strong {
+      display: block;
+      color: var(--gold-primary);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    /* =========================================================
+       Unidades / Onde Estamos
+       ========================================================= */
+    .unidades-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .unidade-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+      transition: var(--transition);
+    }
+
+    .unidade-card:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .unidade-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .unidade-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .unidade-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    /* =========================================================
+       Rodapé
+       ========================================================= */
+    .footer {
+      background: #050505;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 80px 0 30px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--gold-primary);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 30px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* Botão Flutuante do WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+      transition: var(--transition);
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .hero-grid, .conceito-grid, .container-detalhe, .unidades-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pilar-badges {
+        grid-template-columns: 1fr !important;
+      }
+
+      .grid-4-linhas {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- CABEÇALHO / MENU DE NAVEGAÇÃO -->
   <header class="navbar">
     <div class="container nav-container">
       <div class="logo">
-       <a href="#home">MEGA ABSOLUTTA</a>
+        <a href="#home">MEGA ABSOLUTTA</a>
       </div>
-<nav class="nav-container">
-  <ul class="nav-menu">
-    <li><a href="index.html" class="nav-link active">HOME</a></li>
-    <li><a href="servicos.html" class="nav-link">SERVIÇOS</a></li>
-    <li><a href="cursos.html" class="nav-link">LOJA</a></li>
-    <li><a href="loja.html" class="nav-link">CONTATO</a></li>
-  </ul>
-</nav>
-      <div class="menu-toggle" id="mobileMenu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">HOME</a></li>
+          <li><a href="#sobre" class="nav-link">SOBRE</a></li>
+          <li><a href="#linhas" class="nav-link">LINHAS</a></li>
+          <li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
+          <li><a href="cursos.html" class="nav-link">CURSO</a></li>
+        </ul>
+      </nav>
+      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
     </div>
   </header>
 
-  <!-- HERO SECTION (CAPA) -->
   <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <img src="jc.png"  class="hero-logo">
-      <h1 class="gold-text">— MEGA ABSOLUTTA —</h1>
-      <h1 class="subtitulo-autor">por Josiane Cristina</h1>
-    </div>
-  </section>
-
-  <!-- SEÇÃO: O QUE FAZ A MEGA ABSOLUTTA SER DIFERENTE -->
-  <section class="diferenciais section-padding">
-    <div class="container text-center">
-      <h2 class="section-title gold-text">O que faz a <span class="fonte-destaque">Mega Absolutta</span><br>ser diferente</h2>
-      <p class="description-text">
-        Aplicamos técnicas modernas e constantemente aprimoradas para proporcionar mais conforto, naturalidade e durabilidade. Cada procedimento é executado com precisão para garantir um resultado seguro e imperceptível.
-      </p>
-<div class="pilar-badges">
-  
-  <div class="badge">
-    <div class="badge-header">
-      <!-- Ícone de Saúde -->
-      <img src="saude.png" alt="Saúde" class="badge-icon">
-      <span class="badge-title">Saúde</span>
-    </div>
-    <p class="badge-text">A saúde dos seus fios é prioridade em cada atendimento. Utilizamos apenas cabelos naturais selecionados e técnicas que respeitam a estrutura do cabelo e do couro cabeludo.</p>
-  </div>
-
-  <div class="badge">
-    <div class="badge-header">
-      <!-- Ícone de Qualidade -->
-      <img src="qualidade.png" alt="Qualidade" class="badge-icon">
-      <span class="badge-title">Qualidade</span>
-    </div>
-    <p class="badge-text">Uma seleção criteriosa de cabelos naturais, com diferentes espessuras, comprimentos e características. Cada escolha é feita para garantir um acabamento harmonioso, sofisticado e perfeitamente compatível com o cabelo da cliente.
-</p>
-  </div>
-
-  <div class="badge">
-    <div class="badge-header">
-      <!-- Ícone de Segurança -->
-      <img src="escudo.png" alt="Segurança" class="badge-icon">
-      <span class="badge-title">Segurança</span>
-    </div>
-    <p class="badge-text">A avaliação personalizada é uma etapa essencial do nosso processo. Ela nos permite definir a técnica, a quantidade e o tipo de cabelo ideais, proporcionando um procedimento seguro, preciso e respeitando as características de cada cliente.</p>
-  </div>
-
-  <div class="badge">
-    <div class="badge-header">
-      <!-- Ícone de Tecnologia -->
-      <img src="tech.png" alt="Tecnologia" class="badge-icon">
-      <span class="badge-title">Tecnologia</span>
-    </div>
-    <p class="badge-text">Aplicamos técnicas modernas e constantemente aprimoradas para proporcionar mais conforto, naturalidade e durabilidade. Cada procedimento é executado com precisão para garantir um resultado seguro e imperceptível.</p>
-  </div>
-  </section>
-
-  <!-- SEÇÃO: CONCEITO & EXPERIÊNCIA (SOBRE NÓS) -->
-  <!-- SEÇÃO: CONCEITO & EXPERIÊNCIA (SOBRE NÓS DECORADA) -->
-  <section id="sobre" class="conceito section-padding dark-bg secao-decorada">
-    
-    <!-- ELEM. DECORATIVO 1: Curva Orgânica Dourada no Canto Superior Direito -->
-    <svg class="decoracao-curva topo-direito" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M190 0C190 120 80 180 10 300" stroke="url(#gold-grad)" stroke-width="2.5" opacity="0.85"/>
-      <defs>
-        <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#bf953f" />
-          <stop offset="50%" stop-color="#fcf6ba" />
-          <stop offset="100%" stop-color="#aa771c" />
-        </linearGradient>
-      </defs>
-    </svg>
-
-    <!-- ELEM. DECORATIVO 2: Ramo Botânico Dourado no Canto Inferior Esquerdo -->
-    <svg class="decoracao-ramo base-esquerda" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 190 C 40 130, 80 70, 90 10" stroke="url(#gold-grad-botanico)" stroke-width="2" opacity="0.9"/>
-      <path d="M30 150 C 15 135, 10 120, 30 130 C 45 135, 40 145, 30 150 Z" fill="url(#gold-grad-botanico)" opacity="0.85"/>
-      <path d="M52 110 C 68 95, 75 85, 58 92 C 45 100, 48 108, 52 110 Z" fill="url(#gold-grad-botanico)" opacity="0.85"/>
-      <path d="M70 65 C 55 50, 50 35, 70 45 C 82 50, 78 60, 70 65 Z" fill="url(#gold-grad-botanico)" opacity="0.85"/>
-      <defs>
-        <linearGradient id="gold-grad-botanico" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#b38728" />
-          <stop offset="50%" stop-color="#fcf6ba" />
-          <stop offset="100%" stop-color="#bf953f" />
-        </linearGradient>
-      </defs>
-    </svg>
-
-    <!-- CONTEÚDO REAL DA SEÇÃO -->
-    <div class="container grid-2">
-      <div class="conceito-img">
-        <img src="jc.png" alt="Mega Absolutta - Experiência que transforma">
-      </div>
-      <div class="conceito-text">
-        <h3 class="gold-subtitle"><span class="fonte-conceito">Conceito</span></h3>
-        <h2 class="gold-text"> <span class="fonte-destaque">Mega Absolutta</span></h2>
-        <p>Na Mega Absolutta, acreditamos que transformar cabelos é também transformar a autoestima. Unimos técnica, qualidade e dedicação para oferecer resultados naturais, seguros e personalizados. Mais do que beleza, entregamos confiança, valorizando a essência de cada cliente e contribuindo para a evolução do mercado por meio da excelência e do conhecimento.</p>
-        
-        <h3 class="gold-subtitle margin-top"><span class="fonte-conceito">Experiência que transforma</span></h3>
-        <p>A Mega Absolutta nasceu da paixão por transformar vidas através dos cabelos. Cada atendimento, cada técnica e cada detalhe refletem nosso compromisso com excelência, segurança e autenticidade. Nossa missão é proporcionar beleza, confiança e autoestima, sempre com um olhar humano e personalizado.</p>
-        
-        <p>Nas extensões Absolutta cada aplicação é pensada para oferecer uma experiência única. Trabalhamos com cabelos naturais selecionados e uma técnica de alta performance que proporciona um acabamento invisível, confortável e duradouro.</p>
-        
-        <p>Sem calor, sem agressões aos fios e com manutenções simples, entregamos mais do que um mega hair: entregamos confiança, sofisticação e uma transformação que valoriza a sua beleza natural.</p>
-
-        <p>A Mega Absolutta acredita que a excelência nasce do conhecimento. Por isso, investimos constantemente na formação de profissionais que desejam elevar o nível dos seus serviços e se destacar no mercado da beleza.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LINHA DIVISÓRIA -->
-<hr class="linha-divisoria">
-
-  <!-- SEÇÃO: NOSSAS LINHAS -->
-
-  <!-- SEÇÃO DE DETALHES COM AS SUAS NOVAS CLASSES -->
-<section id="secao-detalhe" class="detalhe-modelo">
-<!-- 1. TÍTULO AQUI FORA (Acima da div das colunas) -->
-  <h2 class="subtitulo-secao">NOSSAS LINHAS</h2>
-  <div class="container-detalhe">
-    <!-- Lado Esquerdo: Textos -->
-    <div class="detalhe-texto">
-      <h2 id="detalhe-titulo" class="titulo-modelo">regional</h2>
-      <p id="detalhe-descricao">
-            Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.
-      </p>
-    </div>
-
-    <!-- Lado Direito: Imagem -->
-    <div class="detalhe-imagem">
-      <img id="detalhe-img" src="regionalbrasil_detalhe.png">
-    </div>
-  </div>
-</section>
-
-  <!-- SEÇÃO: NOSSAS LINHAS -->
-<section id="linhas" class="linhas section-padding">
-  <div class="container">
-<!--    <h2 class="section-title text-center gold-text">NOSSAS LINHAS</h2>-->
-    <div class="grid-4">
-
-      <div class="card-modelo" onclick="trocarModelo('regional')">
-        <img src="regionalbrasil.png" alt="Brasileiros Regionais" class="img-produto">
-        <h3><strong class="gold-text">brasileiros regionais</strong></h3>
-      </div>
-
-      <div class="card-modelo" onclick="trocarModelo('sul')">
-        <img src="brasileirosul.png" alt="Brasileiros do Sul" class="img-produto">
-        <h3><strong class="gold-text">brasileiros do sul</strong></h3>
-      </div>
-
-      <div class="card-modelo" onclick="trocarModelo('vietnamita')">
-        <img src="vietnamita.png" alt="Vietnamitas" class="img-produto">
-        <h3><strong class="gold-text">Vietnamitas</strong></h3>
-      </div>
-
-      <div class="card-modelo" onclick="trocarModelo('personalizados')">
-        <img src="personalizados.png" alt="Personalizados" class="img-produto">
-        <h3><strong class="gold-text">Personalizados</strong></h3>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- RODAPÉ (FOOTER) -->
-  <footer id="contato" class="footer">
-    <div class="container grid-4-footer">
-      <!-- Coluna 1: Institucional -->
-      <div class="footer-col">
-        <h4 class="gold-text">institucional</h4>
-        <ul>
-          <li><a href="#sobre">Sobre nós</a></li>
-          <li><a href="#">Certificação</a></li>
-        </ul>
-      </div>
-      <!-- Coluna 2: Links Rápidos -->
-      <div class="footer-col">
-        <h4 class="gold-text">links rápidos</h4>
-        <ul>
-          <li><a href="#">Loja</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-      <!-- Coluna 3: Onde Estamos -->
-      <div class="footer-col">
-        <h4 class="gold-text">onde estamos?</h4>
-        <p>UNIDADE 1<p>
-        <p>Rua Uberaba, 187 - Centro - Araxá - MG</p>
-        <br>
-        <p>UNIDADE 2<p>
-        <p>Praça Cornélio Pires, 91 - Sala 8 - Jardim América -Ribeirão Preto - SP</p>
-        <p class="horario">Seg a Sex de 08hrs às 18hrs</p>
-      </div>
-      <!-- Coluna 4: Nossas Redes -->
-      <div class="footer-col">
-        <h4 class="gold-text">nossas redes</h4>
-        <div class="social-links">
-          <a href="https://www.instagram.com/mega_absolutta?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.threads.net/@mega_absolutta"><i class="fa-brands fa-threads"></i></a>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="hero-tag">Josiane Cristina · Mega Hair</span>
+          <h1 class="hero-title">Autoestima em <span>cada fio.</span></h1>
+          <p class="hero-desc">
+            Mais de 10 anos transformando a autoestima através da técnica exclusiva de Mega Hair — para clientes que buscam sofisticação e profissionais que querem dominar a arte.
+          </p>
+          <div class="hero-actions">
+            <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20atendimento." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+            <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" class="btn-outline">@mega_absolutta</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="jc2.jpeg" alt="Josiane Cristina - Mega Absolutta">
         </div>
       </div>
     </div>
-    <div class="copyright text-center">
-      <p>&copy; 2026 MEGA ABSOLUTTA BRASIL TODOS OS DIREITOS RESERVADOS</p>
+  </section>
+
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <div class="ticker-item">✦ +7.000 Atendimentos</div>
+      <div class="ticker-item">✦ +10 Anos de Experiência</div>
+      <div class="ticker-item">✦ Ribeirão Preto · Araxá</div>
+      <div class="ticker-item">✦ Cabelos Nacionais & Importados Selecionados</div>
+      <div class="ticker-item">✦ +7.000 Atendimentos</div>
+      <div class="ticker-item">✦ +10 Anos de Experiência</div>
+      <div class="ticker-item">✦ Ribeirão Preto · Araxá</div>
+    </div>
+  </div>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">+7k</div>
+          <div class="stat-label">Atendimentos Realizados</div>
+        </div>
+        <div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Anos de Experiência</div>
+        </div>
+        <div>
+          <div class="stat-number">11k</div>
+          <div class="stat-label">Seguidoras no Instagram</div>
+        </div>
+        <div>
+          <div class="stat-number">02</div>
+          <div class="stat-label">Cidades Atendidas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container text-center">
+      <span class="gold-subtitle" style="text-align: center;">Nossos Pilares</span>
+      <h2 class="section-title gold-text" style="text-align: center;">O que faz a Mega Absolutta ser diferente</h2>
+      <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; text-align: center;">
+        Técnicas aprimoradas continuamente para oferecer o máximo conforto, naturalidade imperceptível e preservação da saúde dos seus fios.
+      </p>
+
+      <div class="pilar-badges">
+        <div class="badge">
+          <div class="badge-header">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span class="badge-title">Saúde</span>
+          </div>
+          <p class="badge-text">A saúde dos seus fios é prioridade em cada atendimento. Utilizamos apenas cabelos naturais selecionados e técnicas que respeitam a estrutura do cabelo e do couro cabeludo.</p>
+        </div>
+
+        <div class="badge">
+          <div class="badge-header">
+            <i class="fa-solid fa-gem"></i>
+            <span class="badge-title">Qualidade</span>
+          </div>
+          <p class="badge-text">Uma seleção criteriosa de cabelos naturais, com diferentes espessuras, comprimentos e características. Cada escolha é feita para garantir um acabamento harmonioso e compatível.</p>
+        </div>
+
+        <div class="badge">
+          <div class="badge-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span class="badge-title">Segurança</span>
+          </div>
+          <p class="badge-text">A avaliação personalizada é essencial. Ela nos permite definir a técnica, a quantidade e o tipo de cabelo ideais, proporcionando um procedimento seguro e preciso.</p>
+        </div>
+
+        <div class="badge">
+          <div class="badge-header">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span class="badge-title">Tecnologia</span>
+          </div>
+          <p class="badge-text">Aplicamos técnicas modernas e constantemente aprimoradas para proporcionar mais conforto, naturalidade e durabilidade com acabamento imperceptível.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="conceito-grid">
+        <div>
+          <img src="jc4.png" alt="Sobre a Mega Absolutta" style="border-radius: 8px;">
+        </div>
+        <div>
+          <span class="gold-subtitle">Conceito Mega Absolutta</span>
+          <h2 class="section-title">Especialista em transformar a <span class="gold-text">autoestima.</span></h2>
+          <p style="color: var(--text-muted); margin-bottom: 15px;">
+            Na Mega Absolutta, acreditamos que transformar cabelos é também transformar a autoestima. Unimos técnica, qualidade e dedicação para oferecer resultados naturais, seguros e personalizados.
+          </p>
+          <div class="quote-box">
+            “Autoestima para clientes. Conhecimento para profissionais.”
+          </div>
+          <p style="color: var(--text-muted);">
+            Nas extensões Absolutta cada aplicação é pensada para oferecer uma experiência única. Trabalhamos com cabelos naturais selecionados e uma técnica de alta performance que proporciona um acabamento invisível, confortável e duradouro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="linhas" class="section-padding">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="gold-subtitle">Catálogo Exclusivo</span>
+        <h2 class="section-title">Conheça Nossas Linhas</h2>
+      </div>
+
+      <div class="detalhe-modelo">
+        <div class="container-detalhe">
+          <div class="detalhe-texto">
+            <span class="gold-subtitle">LINHA EM DESTAQUE</span>
+            <h2 id="detalhe-titulo" class="titulo-modelo">brasileiros regionais</h2>
+            <p id="detalhe-descricao" class="descricao-linha">
+              Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.
+            </p>
+          </div>
+          <div class="detalhe-imagem">
+            <img id="detalhe-img" src="regionalbrasil_detalhe.png" alt="Detalhe do Cabelo">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-4-linhas">
+        <div class="card-modelo active" onclick="trocarModelo('regional', this)">
+          <img src="regionalbrasil.png" alt="Brasileiros Regionais">
+          <h3>Nossa linha<strong class="gold-text">Brasileiros Regionais</strong></h3>
+        </div>
+
+        <div class="card-modelo" onclick="trocarModelo('sul', this)">
+          <img src="brasileirosul.png" alt="Brasileiros do Sul">
+          <h3>Nossa linha<strong class="gold-text">Brasileiros do Sul</strong></h3>
+        </div>
+
+        <div class="card-modelo" onclick="trocarModelo('vietnamita', this)">
+          <img src="vietnamita.png" alt="Vietnamitas">
+          <h3>Nossa linha<strong class="gold-text">Vietnamitas</strong></h3>
+        </div>
+
+        <div class="card-modelo" onclick="trocarModelo('personalizados', this)">
+          <img src="personalizados.png" alt="Personalizados">
+          <h3>Nossa linha<strong class="gold-text">Personalizados</strong></h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="unidades" class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="gold-subtitle">Onde Estamos</span>
+        <h2 class="section-title">Duas cidades, o mesmo cuidado.</h2>
+      </div>
+
+      <div class="unidades-grid">
+        <div class="unidade-card">
+          <span class="unidade-badge">Atendimento Fixo</span>
+          <h3>Ribeirão Preto — SP</h3>
+          <p>
+            Edifício Boulevard<br>
+            Praça Cornélio Pires, 91 — Jardim América<br>
+            Ribeirão Preto - SP
+          </p>
+          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Ribeir%C3%A3o%20Preto." target="_blank" rel="noopener" class="btn-gold">Agendar em Ribeirão Preto →</a>
+        </div>
+
+        <div class="unidade-card">
+          <span class="unidade-badge">A cada 15 dias</span>
+          <h3>Araxá — MG</h3>
+          <p>
+            Atendimentos quinzenais com hora marcada.<br>
+            Consulte a disponibilidade e garanta a sua data.
+          </p>
+          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Arax%C3%A1." target="_blank" rel="noopener" class="btn-gold">Agendar em Araxá →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 class="gold-text">MEGA ABSOLUTTA</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Transformando vidas e elevando a autoestima através de extensões de alta qualidade.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="gold-text">Navegação</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#linhas">Linhas de Cabelos</a></li>
+            <li><a href="#unidades">Unidades</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="gold-text">Atendimento</h4>
+          <p style="color: var(--text-muted); font-size: 0.85rem;">Ribeirão Preto - SP & Araxá - MG</p>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Seg a Sex: 08h às 18h</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="gold-text">Redes Sociais</h4>
+          <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" style="color: var(--gold-primary); font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 MEGA ABSOLUTTA BRASIL — TODOS OS DIREITOS RESERVADOS</p>
+      </div>
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a href="https://api.whatsapp.com/send?phone=5516996207228" class="whatsapp-btn" target="_blank" rel="noopener">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+  <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-<script>
-  // Objeto com as informações de cada modelo
-  const dadosModelos = {
-    regional: {
-      titulo: 'brasileiros regionais',
-      descricao: 'Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.',
-      imagem: 'regionalbrasil_detalhe.png' // <-- Ajuste para o nome exato da foto da mecha/detalhe
-    },
-    sul: {
-      titulo: 'brasileiros do sul',
-      descricao: 'Fios extremamente finos, sedosos e de tonalidades naturalmente mais claras. Cabelos raros e nobres, perfeitos para quem exige máxima leveza, fluidez e alta qualidade.',
-      imagem: 'brasileirosul_detalhe.png' // <-- Ajuste para o nome exato da foto
-    },
-    vietnamita: {
-      titulo: 'vietnamita',
-      descricao: 'Conhecidos por sua resistência excepcional, densidade e brilho intenso, os cabelos vietnamitas possuem fios encorpados (de espessura média a grossa) com caimento impecável. Em tons do castanho ao preto natural, suportam bem estilizações e clareamentos moderados. Com cutículas 100% alinhadas, oferecem altíssima durabilidade sem embaraçar, sendo a escolha perfeita para quem busca volume marcante e fios compridos.',
-      imagem: 'vietnamita_detalhe.png' // <-- Ajuste para o nome exato da foto
-    },
-    personalizados: {
-      titulo: 'personalizados',
-      descricao: 'Linha sob medida desenvolvida de acordo com a preferência do cliente. Processo artesanal de seleção, textura e tonalidade para garantir um resultado único e exclusivo.',
-      imagem: 'personalizados_detalhe.png' // <-- Ajuste para o nome exato da foto
+  <script>
+    const dadosModelos = {
+      regional: {
+        titulo: 'brasileiros regionais',
+        descricao: 'Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.',
+        imagem: 'regionalbrasil_detalhe.png'
+      },
+      sul: {
+        titulo: 'brasileiros do sul',
+        descricao: 'Fios extremamente finos, sedosos e de tonalidades naturally mais claras. Cabelos raros e nobres, perfeitos para quem exige máxima leveza, fluidez e alta qualidade.',
+        imagem: 'brasileirosul_detalhe.png'
+      },
+      vietnamita: {
+        titulo: 'vietnamita',
+        descricao: 'Conhecidos por sua resistência excepcional, densidade e brilho intenso, os cabelos vietnamitas possuem fios encorpados (de espessura média a grossa) com caimento impecável. Suportam bem estilizações e possuem altísima durabilidade.',
+        imagem: 'vietnamita_detalhe.png'
+      },
+      personalizados: {
+        titulo: 'personalizados',
+        descricao: 'Linha sob medida desenvolvida de acordo com a preferência do cliente. Processo artesanal de seleção, textura e tonalidade para garantir um resultado único e exclusivo.',
+        imagem: 'personalizados_detalhe.png'
+      }
+    };
+
+    function trocarModelo(chave, elemento) {
+      const dados = dadosModelos[chave];
+      const imgElement = document.getElementById('detalhe-img');
+
+      document.querySelectorAll('.card-modelo').forEach(card => card.classList.remove('active'));
+      if (elemento) elemento.classList.add('active');
+
+      if (dados) {
+        imgElement.style.opacity = '0';
+
+        setTimeout(() => {
+          document.getElementById('detalhe-titulo').textContent = dados.titulo;
+          document.getElementById('detalhe-descricao').textContent = dados.descricao;
+          imgElement.src = dados.imagem;
+          imgElement.style.opacity = '1';
+        }, 200);
+      }
     }
-  };
-
-  function trocarModelo(chave) {
-    const dados = dadosModelos[chave];
-    const imgElement = document.getElementById('detalhe-img');
-
-    if (dados) {
-      // Efeito suave de transição (transparência)
-      imgElement.style.opacity = '0';
-
-      setTimeout(() => {
-        document.getElementById('detalhe-titulo').textContent = dados.titulo;
-        document.getElementById('detalhe-descricao').textContent = dados.descricao;
-        imgElement.src = dados.imagem;
-        imgElement.style.opacity = '1';
-      }, 200); // 200ms de transição
-    }
-  }
-</script>
+  </script>
 </body>
 </html>
