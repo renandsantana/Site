@@ -166,94 +166,97 @@ img {
 }
 
 /* =========================================================
-   4. HERO SECTION (IMAGEM EXPANDIDA COM FADE LATERAL)
-   ========================================================= */
-/* =========================================================
-   HERO SECTION - FOTO FULL HEIGHT NA DIREITA E TEXTO PRÓXIMO
+   4. HERO SECTION (DESKTOP)
    ========================================================= */
 #home.hero {
-  position: relative !important;
-  width: 100vw !important;
-  min-height: calc(100vh - 50px) !important;
-  height: calc(100vh - 50px) !important;
-  display: flex !important;
-  align-items: center !important;
-  background-color: #0a0a0a !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-dark);
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-/* CONTAINER DO TEXTO */
-#home .hero-content-wrapper {
-  position: relative !important;
-  z-index: 10 !important;
-  width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding-left: 5vw !important;
-  padding-top: 60px !important;
-  pointer-events: none !important;
+.hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 6vw;
+  pointer-events: none;
 }
 
-#home .hero-text {
-  max-width: 480px !important;
-  pointer-events: auto !important;
+.hero-text {
+  max-width: 500px;
+  pointer-events: auto;
 }
 
-/* IMAGEM ANCORADA NA DIREITA (FULL HEIGHT + WIDE) */
-#home .hero-image-wrapper {
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  left: auto !important;
-  bottom: 0 !important;
-  width: 62vw !important; /* Faz a foto vir mais para o centro, perto do texto */
-  height: 100% !important;
-  z-index: 1 !important;
-
-  /* Corte de transparência sutil apenas na borda esquerda (5%) */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 100%) !important;
-  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 100%) !important;
+.hero-tag {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold-primary);
+  margin-bottom: 20px;
+  display: block;
 }
 
-#home .hero-image-wrapper img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Preenche a altura e largura sem achatar */
-  object-position: center 15% !important; /* Centraliza no rosto/cabelo da modelo */
-  border-radius: 0 !important;
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  line-height: 1.05;
+  margin-bottom: 25px;
+  font-weight: 400;
+  color: #ffffff;
 }
 
-/* RESPONSIVIDADE MOBILE */
-@media (max-width: 992px) {
-  #home.hero {
-    height: auto !important;
-    min-height: auto !important;
-    flex-direction: column !important;
-    padding-top: 100px !important;
-  }
-  #home .hero-content-wrapper {
-    padding-left: 5% !important;
-    padding-right: 5% !important;
-    padding-top: 0 !important;
-  }
-  #home .hero-text {
-    max-width: 100% !important;
-    text-align: center !important;
-  }
-  #home .hero-image-wrapper {
-    position: relative !important;
-    width: 100% !important;
-    height: 400px !important;
-    margin-top: 30px !important;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-  }
+.hero-title span { 
+  font-style: italic; 
+  font-weight: 700; 
+}
+
+.hero-desc { 
+  color: var(--text-muted); 
+  font-size: 1rem; 
+  line-height: 2; 
+  margin-bottom: 50px; 
+}
+
+.hero-actions { 
+  display: flex; 
+  gap: 15px; 
+  align-items: center; 
+  margin-bottom: 35px; 
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62vw;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 0;
+
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 15%, #000 45%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 15%, #000 45%);
 }
 
 /* =========================================================
-   5. TICKER INFINITE SCROLL BANNER
+   5. TICKER
    ========================================================= */
 .ticker-bar {
   background: var(--bg-card);
@@ -292,7 +295,7 @@ img {
 }
 
 /* =========================================================
-   6. NÚMEROS & ESTATÍSTICAS
+   6. NÚMEROS
    ========================================================= */
 .stats-section {
   padding: 60px 0;
@@ -322,7 +325,7 @@ img {
 }
 
 /* =========================================================
-   7. PILARES DE DIFERENCIAIS (GRID 2x2 SIMÉTRICO)
+   7. PILARES
    ========================================================= */
 .pilar-badges {
   display: grid !important;
@@ -380,7 +383,7 @@ img {
 }
 
 /* =========================================================
-   8. CONCEITO & EXPERIÊNCIA
+   8. CONCEITO
    ========================================================= */
 .conceito-grid {
   display: grid;
@@ -400,7 +403,7 @@ img {
 }
 
 /* =========================================================
-   9. NOSSAS LINHAS (GALERIA & SELETOR INTERATIVO)
+   9. LINHAS
    ========================================================= */
 .detalhe-modelo {
   background: var(--bg-card);
@@ -487,7 +490,7 @@ img {
 }
 
 /* =========================================================
-   10. UNIDADES / ONDE ESTAMOS
+   10. UNIDADES
    ========================================================= */
 .unidades-grid {
   display: grid;
@@ -579,7 +582,6 @@ img {
   letter-spacing: 1px;
 }
 
-/* BOTÃO FLUTUANTE DO WHATSAPP */
 .whatsapp-btn {
   position: fixed;
   bottom: 30px;
@@ -603,56 +605,106 @@ img {
 }
 
 /* =========================================================
-   12. RESPONSIVIDADE (MOBILE & TABLETS)
+   12. RESPONSIVIDADE (MOBILE & TABLET)
    ========================================================= */
 @media (max-width: 992px) {
-  .hero .container {
-    padding-left: 5%;
-    padding-right: 5%;
+  .nav-menu {
+    display: none;
   }
 
-  .hero-grid, .conceito-grid, .container-detalhe, .unidades-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .nav-container {
+    padding: 0 10px;
+  }
+
+  .logo a {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar .btn-gold {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+  }
+
+  #home.hero {
+    height: auto;
+    min-height: auto;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .hero-content-wrapper {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0;
+    text-align: center;
   }
 
   .hero-text {
     max-width: 100%;
-    text-align: center;
+    margin: 0 auto;
   }
 
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
   }
 
-  .hero-actions, .scroll-indicator {
+  .hero-desc {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions {
     justify-content: center;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .hero-image-wrapper {
-    min-height: 400px;
-    -webkit-mask-image: none;
-    mask-image: none;
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
   }
 
-  .hero-image-wrapper img {
-    border-radius: 12px;
-    max-height: 500px;
+  .hero-bg-image {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    height: 380px;
+    margin-top: 30px;
+  }
+
+  .hero-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .pilar-badges {
     grid-template-columns: 1fr !important;
   }
 
-  .grid-4-linhas {
-    grid-template-columns: repeat(2, 1fr);
+  .conceito-grid, .container-detalhe, .unidades-grid, .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .footer-grid {
+  .grid-4-linhas {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
