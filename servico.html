@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -47,20 +46,9 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
     .container {
       width: 90%;
@@ -68,9 +56,7 @@
       margin: 0 auto;
     }
 
-    .gold-text {
-      color: var(--gold-primary);
-    }
+    .gold-text { color: var(--gold-primary); }
 
     .gold-subtitle {
       color: var(--gold-primary);
@@ -99,7 +85,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.85);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       transition: var(--transition);
@@ -120,10 +106,7 @@
       color: #fff;
     }
 
-    .nav-menu {
-      display: flex;
-      gap: 30px;
-    }
+    .nav-menu { display: flex; gap: 30px; }
 
     .nav-link {
       font-size: 0.8rem;
@@ -133,9 +116,7 @@
       transition: var(--transition);
     }
 
-    .nav-link:hover, .nav-link.active {
-      color: var(--gold-primary);
-    }
+    .nav-link:hover, .nav-link.active { color: var(--gold-primary); }
 
     .btn-gold {
       background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
@@ -155,6 +136,16 @@
     .btn-gold:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Botão Hambúrguer Mobile (Oculto por padrão no desktop) */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     /* =========================================================
@@ -188,7 +179,6 @@
       box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
     }
 
-    /* Imagem expandida */
     .service-image {
       position: absolute;
       top: 0;
@@ -207,11 +197,8 @@
       transition: transform 0.5s ease;
     }
 
-    .service-card:hover .service-image img {
-      transform: scale(1.05);
-    }
+    .service-card:hover .service-image img { transform: scale(1.05); }
 
-    /* Sombreamento escuro */
     .service-card::before {
       content: '';
       position: absolute;
@@ -224,7 +211,6 @@
       pointer-events: none;
     }
 
-    /* Conteúdo do Texto */
     .service-content {
       position: relative;
       z-index: 3;
@@ -232,13 +218,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 100%;
     }
 
-    .service-content h3 {
+    .service-title {
       font-family: var(--font-title);
       font-size: 1.4rem;
       color: var(--gold-primary);
       margin-bottom: 12px;
+      min-height: 3.2rem;
+      display: flex;
+      align-items: flex-start;
     }
 
     .service-content p {
@@ -269,7 +259,6 @@
       font-size: 0.75rem;
     }
 
-    /* Botão Dourado no Rodapé do Card */
     .btn-card-gold {
       display: block;
       width: 100%;
@@ -285,11 +274,75 @@
       transition: var(--transition);
       border: none;
       cursor: pointer;
+      margin-top: auto;
     }
 
     .btn-card-gold:hover {
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    /* =========================================================
+       CARROSSEL INFINITO DE FOTOS (TICKER GALERIA)
+       ========================================================= */
+    .ticker-galeria-section {
+      padding: 60px 0;
+      background-color: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      margin-top: 40px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .ticker-fotos-bar {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .ticker-fotos-track {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 20px;
+      width: max-content;
+      animation: ticker-fotos-scroll 25s linear infinite;
+    }
+
+    .ticker-fotos-bar:hover .ticker-fotos-track {
+      animation-play-state: paused;
+    }
+
+    .ticker-foto-item {
+      width: 280px;
+      min-width: 280px;
+      max-width: 280px;
+      height: 320px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-dark);
+    }
+
+    .ticker-foto-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      transition: transform 0.4s ease;
+    }
+
+    .ticker-foto-item:hover img {
+      transform: scale(1.05);
+    }
+
+    @keyframes ticker-fotos-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* =========================================================
@@ -394,9 +447,7 @@
       margin-bottom: 20px;
     }
 
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
+    .footer-col ul li { margin-bottom: 10px; }
 
     .footer-col ul li a {
       color: var(--text-muted);
@@ -404,9 +455,7 @@
       transition: var(--transition);
     }
 
-    .footer-col ul li a:hover {
-      color: var(--gold-primary);
-    }
+    .footer-col ul li a:hover { color: var(--gold-primary); }
 
     .copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -417,7 +466,6 @@
       letter-spacing: 1px;
     }
 
-    /* Botão Flutuante do WhatsApp */
     .whatsapp-btn {
       position: fixed;
       bottom: 30px;
@@ -436,31 +484,63 @@
       transition: var(--transition);
     }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
+    .whatsapp-btn:hover { transform: scale(1.1); }
 
-    /* Responsividade */
+    /* =========================================================
+       RESPONSIVIDADE MOBILE (AJUSTES DO MENU)
+       ========================================================= */
     @media (max-width: 992px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      .mobile-menu-btn { display: block; } /* Exibe o botão de hambúrguer */
+
       .nav-menu {
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+        text-align: center;
+        display: none; /* Inicia fechado */
+      }
+
+      .nav-menu.active {
+        display: flex; /* Abre o menu quando clicado */
+      }
+
+      .logo a {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .navbar .btn-gold {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+      }
+
+      .ticker-foto-item {
+        width: 220px;
+        min-width: 220px;
+        height: 260px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR IDÊNTICA À HOME -->
+  <!-- NAVBAR COM SUPORTE A MENU MOBILE -->
   <header class="navbar">
     <div class="container nav-container">
       <div class="logo">
         <a href="index.html#home">MEGA ABSOLUTTA</a>
       </div>
+      
       <nav>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
           <li><a href="index.html#home" class="nav-link">HOME</a></li>
           <li><a href="index.html#sobre" class="nav-link">SOBRE</a></li>
           <li><a href="index.html#linhas" class="nav-link">LINHAS</a></li>
@@ -468,93 +548,144 @@
           <li><a href="cursos.html" class="nav-link">CURSO</a></li>
         </ul>
       </nav>
-      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+        
+        <!-- Ícone do Menu Hambúrguer -->
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- CARDS DE SERVIÇO (4 CARDS) -->
   <section class="services-container">
 
-    <!-- CARD 1: APLICAÇÃO -->
     <div class="service-card">
+      <div class="service-content">
+        <div>
+          <h3 class="service-title">Aplicação de Mega Hair</h3>
+          <p>Trabalhamos com aplicação de Mega Hair personalizada, utilizando cabelos adquiridos em nossas lojas ou o cabelo da própria cliente.<br>Oferecemos diferentes técnicas, escolhidas de acordo com o cabelo, a necessidade e o resultado desejado.</p>
+          
+          <ul class="service-features">
+            <li>Ponto americano costurado</li>
+            <li>Fita adesiva</li>
+            <li>Nó italiano</li>
+            <li>Tic Tac (Removível)</li>
+            <li>Prótese capilar</li>
+            <li>Confecção e Colocação de Perucas</li>
+          </ul>
+        </div>
+        
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20para%20Aplicação%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-card-gold">
+          AGENDAR AVALIAÇÃO
+        </a>
+      </div>
+
       <div class="service-image">
         <img src="jc3.jpeg" alt="Aplicação de Mega Hair" onerror="this.parentElement.innerHTML = '[IMAGEM: APLICAÇÃO]';">
       </div>
-      <div class="service-content">
-        <div>
-          <h3>Aplicação de Mega Hair</h3>
-          <p>Aplicação especializada utilizando as melhores técnicas do mercado para garantir conforto, leveza e acabamento imperceptível.</p>
-          <ul class="service-features">
-            <li>Fita Adesiva / Micropele</li>
-            <li>Ponto Americano / Nano Célula</li>
-            <li>Microesfera & Queratina</li>
-            <li>Sem danos aos fios naturais</li>
-          </ul>
-        </div>
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20para%20Aplicação%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-card-gold">AGENDAR AVALIAÇÃO</a>
-      </div>
     </div>
 
-    <!-- CARD 2: MANUTENÇÃO -->
     <div class="service-card">
+      <div class="service-content">
+        <div>
+          <h3 class="service-title">Manutenção de Mega hair e prótese capilar</h3>
+          <p>Manutenções realizadas a cada 1 a 3 meses, de acordo com a técnica, o crescimento dos fios e a necessidade de cada cliente.</p>
+          
+          <ul class="service-features">
+            <li>Manutenção de todas as técnicas feita no nosso estúdio</li>
+            <li>Hidratação e reconstrução dos fios</li>
+            <li>Preparação de telas e colocação do Mega Hair</li>
+          </ul>
+        </div>
+        
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Gostaria%20de%20agendar%20minha%20Manutenção%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-card-gold">
+          AGENDAR MANUTENÇÃO
+        </a>
+      </div>
+
       <div class="service-image">
-        <img src="jc3.jpeg" alt="Manutenção Premium de Mega Hair" onerror="this.parentElement.innerHTML = '[IMAGEM: MANUTENÇÃO]';">
-      </div>
-      <div class="service-content">
-        <div>
-          <h3>Manutenção Premium</h3>
-          <p>Serviço essencial de tratamento, remoção cuidadosa, higienização do couro cabeludo e recolocação impecável das extensões.</p>
-          <ul class="service-features">
-            <li>Remoção segura e indolor</li>
-            <li>Tratamento e hidratação profunda</li>
-            <li>Troca de fitas e preparação dos fios</li>
-            <li>Ajuste perfeito de tração</li>
-          </ul>
-        </div>
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Gostaria%20de%20agendar%20minha%20Manutenção%20Premium." target="_blank" rel="noopener" class="btn-card-gold">AGENDAR MANUTENÇÃO</a>
+        <img src="jc3.jpeg" alt="Manutenção de Mega Hair" onerror="this.parentElement.innerHTML = '[IMAGEM: MANUTENÇÃO]';">
       </div>
     </div>
 
-    <!-- CARD 3: PERSONALIZAÇÃO & COLORAÇÃO -->
     <div class="service-card">
+      <div class="service-content">
+        <div>
+          <h3 class="service-title">Personalização & Coloração</h3>
+          <p>Personalizamos a cor do Mega Hair para harmonizar perfeitamente com o cabelo da cliente, criando tons, nuances e mesclas para um resultado natural e exclusivo.</p>
+          
+          <ul class="service-features">
+            <li>Moreno iluminado sob medida nas extensões</li>
+            <li>Mesclagem artesanal de tons e fios</li>
+            <li>Tonalização e coloração de alta precisão</li>
+            <li>Ajuste de raiz e fundo de clareamento</li>
+          </ul>
+        </div>
+        
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Tenho%20interesse%20em%20Personalização%20e%20Coloração%20de%20extensões." target="_blank" rel="noopener" class="btn-card-gold">
+          CONSULTAR ESPECIALISTA
+        </a>
+      </div>
+
       <div class="service-image">
         <img src="jc3.jpeg" alt="Personalização & Coloração" onerror="this.parentElement.innerHTML = '[IMAGEM: PERSONALIZAÇÃO]';">
       </div>
-      <div class="service-content">
-        <div>
-          <h3>Personalização & Coloração</h3>
-          <p>Colorimetria de alta precisão para igualar a cor do Mega Hair ao seu cabelo natural, garantindo fusão e naturalidade total.</p>
-          <ul class="service-features">
-            <li>Loiros Perolados e Platinados</li>
-            <li>Esfocados de raiz elegantes</li>
-            <li>Matização de fios virgens</li>
-            <li>Preservação da fibra capilar</li>
-          </ul>
-        </div>
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Tenho%20interesse%20em%20Personalização%20e%20Coloração%20de%20extensões." target="_blank" rel="noopener" class="btn-card-gold">CONSULTAR ESPECIALISTA</a>
-      </div>
     </div>
 
-    <!-- CARD 4: CONSULTORIA VISAGISTA -->
     <div class="service-card">
-      <div class="service-image">
-        <img src="jc3.jpeg" alt="Consultoria Visagista" onerror="this.parentElement.innerHTML = '[IMAGEM: CONSULTORIA]';">
-      </div>
       <div class="service-content">
         <div>
-          <h3>Consultoria Visagista</h3>
-          <p>Sessão individual de análise capilar para escolher a densidade, gramatura, comprimento e tom ideais para a sua rotina e estilo.</p>
+          <h3 class="service-title">Avaliação Personalizada</h3>
+          <p>Análise individual para definir o cabelo, técnica, quantidade, comprimento e tonalidade mais adequados para você, considerando seu cabelo natural e o resultado desejado.</p>
+          
           <ul class="service-features">
-            <li>Análise de densidade e textura</li>
-            <li>Seleção da linha de fios ideal</li>
+            <li>Análise de densidade e textura capilar</li>
+            <li>Seleção da linha de fios ideal para o seu perfil</li>
             <li>Teste de mechas e sensibilidade</li>
-            <li>Orçamento sob medida</li>
+            <li>Orçamento detalhado e sob medida</li>
           </ul>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Quero%20agendar%20uma%20Consultoria%20Visagista%20na%20Mega%20Absolutta." target="_blank" rel="noopener" class="btn-card-gold">SOLICITAR CONSULTORIA</a>
+        
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Quero%20agendar%20uma%20Avaliação%20Personalizada%20na%20Mega%20Absolutta." target="_blank" rel="noopener" class="btn-card-gold">
+          SOLICITAR AVALIAÇÃO
+        </a>
+      </div>
+
+      <div class="service-image">
+        <img src="jc3.jpeg" alt="Avaliação Personalizada" onerror="this.parentElement.innerHTML = '[IMAGEM: AVALIAÇÃO]';">
       </div>
     </div>
 
+  </section>
+
+  <!-- BANNER TICKER DE FOTOS ANTES & DEPOIS -->
+  <section class="ticker-galeria-section">
+    <div class="container text-center" style="margin-bottom: 25px; text-align: center;">
+      <span class="gold-subtitle">Prova de Excelência</span>
+      <h2 class="section-title">Resultados & Transformações</h2>
+    </div>
+
+    <div class="ticker-fotos-bar">
+      <div class="ticker-fotos-track">
+        <!-- Bloco de Fotos (Conjunto 1) -->
+        <div class="ticker-foto-item"><img src="trans1.jpeg" alt="Antes e Depois 1"></div>
+        <div class="ticker-foto-item"><img src="trans2.jpeg" alt="Antes e Depois 2"></div>
+        <div class="ticker-foto-item"><img src="trans3.jpeg" alt="Antes e Depois 3"></div>
+        <div class="ticker-foto-item"><img src="trans4.jpeg" alt="Antes e Depois 4"></div>
+        <div class="ticker-foto-item"><img src="trans5.jpeg" alt="Antes e Depois 5"></div>
+
+        <!-- Duplicação para Animação Infinita -->
+        <div class="ticker-foto-item"><img src="trans1.jpeg" alt="Antes e Depois 1"></div>
+        <div class="ticker-foto-item"><img src="trans2.jpeg" alt="Antes e Depois 2"></div>
+        <div class="ticker-foto-item"><img src="trans3.jpeg" alt="Antes e Depois 3"></div>
+        <div class="ticker-foto-item"><img src="trans4.jpeg" alt="Antes e Depois 4"></div>
+        <div class="ticker-foto-item"><img src="trans5.jpeg" alt="Antes e Depois 5"></div>
+      </div>
+    </div>
   </section>
 
   <!-- ETAPAS DO ATENDIMENTO -->
@@ -630,6 +761,24 @@
   <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
+
+  <!-- SCRIPT PARA ABRIR E FECHAR O MENU NO CELULAR -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      const icon = document.getElementById('menuIcon');
+      
+      menu.classList.toggle('active');
+      
+      if (menu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+  </script>
 
 </body>
 </html>
