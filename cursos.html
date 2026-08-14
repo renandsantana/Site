@@ -107,7 +107,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.85);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       transition: var(--transition);
@@ -163,6 +163,16 @@
     .btn-gold:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Botão Hambúrguer Mobile */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     /* =========================================================
@@ -389,9 +399,37 @@
       .footer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      
+      .mobile-menu-btn { display: block; }
+
       .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+        text-align: center;
         display: none;
       }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .logo a {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .navbar .btn-gold {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+      }
+
       .hero-curso h1 {
         font-size: 2.4rem;
       }
@@ -400,14 +438,15 @@
 </head>
 <body>
 
-  <!-- NAVBAR IDÊNTICA À HOME -->
+  <!-- NAVBAR COM SUPORTE A MENU MOBILE -->
   <header class="navbar">
     <div class="container nav-container">
       <div class="logo">
         <a href="index.html#home">MEGA ABSOLUTTA</a>
       </div>
+      
       <nav>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
           <li><a href="index.html#home" class="nav-link">HOME</a></li>
           <li><a href="index.html#sobre" class="nav-link">SOBRE</a></li>
           <li><a href="index.html#linhas" class="nav-link">LINHAS</a></li>
@@ -415,7 +454,15 @@
           <li><a href="cursos.html" class="nav-link active">CURSO</a></li>
         </ul>
       </nav>
-      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Curso%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Inscreva-se Já</a>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Curso%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Inscreva-se Já</a>
+        
+        <!-- Ícone do Menu Hambúrguer -->
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -579,6 +626,24 @@
   <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informações%20sobre%20o%20Curso." class="whatsapp-btn" target="_blank" rel="noopener">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
+
+  <!-- SCRIPT PARA ABRIR E FECHAR O MENU NO CELULAR -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      const icon = document.getElementById('menuIcon');
+      
+      menu.classList.toggle('active');
+      
+      if (menu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+  </script>
 
 </body>
 </html>
