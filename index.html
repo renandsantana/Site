@@ -11,6 +11,50 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
+
+  <!-- AJUSTES DO MENU MOBILE PARA O INDEX -->
+  <style>
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-menu-btn { display: block; }
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+        text-align: center;
+        display: none;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .logo a {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .navbar .btn-gold {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -21,15 +65,23 @@
         <a href="#home">MEGA ABSOLUTTA</a>
       </div>
       <nav>
-        <ul class="nav-menu">
-          <li><a href="#home" class="nav-link active">HOME</a></li>
-          <li><a href="#sobre" class="nav-link">SOBRE</a></li>
-          <li><a href="#linhas" class="nav-link">LINHAS</a></li>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active" onclick="closeMenu()">HOME</a></li>
+          <li><a href="#sobre" class="nav-link" onclick="closeMenu()">SOBRE</a></li>
+          <li><a href="#linhas" class="nav-link" onclick="closeMenu()">LINHAS</a></li>
           <li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
           <li><a href="cursos.html" class="nav-link">CURSOS</a></li>
         </ul>
       </nav>
-      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+        
+        <!-- Botão Hambúrguer Mobile -->
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -284,7 +336,9 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
+  <!-- SCRIPTS DA PÁGINA -->
   <script>
+    // Controle das Linhas de Cabelo
     const dadosModelos = {
       regional: {
         titulo: 'brasileiros regionais',
@@ -293,7 +347,7 @@
       },
       sul: {
         titulo: 'brasileiros do sul',
-        descricao: 'Fios extremamente finos, sedosos e de tonalidades naturally mais claras. Cabelos raros e nobres, perfeitos para quem exige máxima leveza, fluidez e alta qualidade.',
+        descricao: 'Fios extremamente finos, sedosos e de tonalidades naturalmente mais claras. Cabelos raros e nobres, perfeitos para quem exige máxima leveza, fluidez e alta qualidade.',
         imagem: 'brasileirosul_detalhe.png'
       },
       vietnamita: {
@@ -325,6 +379,31 @@
           imgElement.style.opacity = '1';
         }, 200);
       }
+    }
+
+    // Controle do Menu Hambúrguer Mobile
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      const icon = document.getElementById('menuIcon');
+      
+      menu.classList.toggle('active');
+      
+      if (menu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('navMenu');
+      const icon = document.getElementById('menuIcon');
+      
+      menu.classList.remove('active');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
     }
   </script>
 </body>

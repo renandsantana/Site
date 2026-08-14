@@ -85,7 +85,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.85);
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       transition: var(--transition);
@@ -136,6 +136,16 @@
     .btn-gold:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Botão Hambúrguer Mobile (Oculto por padrão no desktop) */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     /* =========================================================
@@ -476,10 +486,42 @@
 
     .whatsapp-btn:hover { transform: scale(1.1); }
 
-    /* Responsividade */
+    /* =========================================================
+       RESPONSIVIDADE MOBILE (AJUSTES DO MENU)
+       ========================================================= */
     @media (max-width: 992px) {
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-menu { display: none; }
+      
+      .mobile-menu-btn { display: block; } /* Exibe o botão de hambúrguer */
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.98);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+        text-align: center;
+        display: none; /* Inicia fechado */
+      }
+
+      .nav-menu.active {
+        display: flex; /* Abre o menu quando clicado */
+      }
+
+      .logo a {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .navbar .btn-gold {
+        padding: 8px 16px;
+        font-size: 0.7rem;
+      }
+
       .ticker-foto-item {
         width: 220px;
         min-width: 220px;
@@ -490,14 +532,15 @@
 </head>
 <body>
 
-  <!-- NAVBAR IDÊNTICA À HOME -->
+  <!-- NAVBAR COM SUPORTE A MENU MOBILE -->
   <header class="navbar">
     <div class="container nav-container">
       <div class="logo">
         <a href="index.html#home">MEGA ABSOLUTTA</a>
       </div>
+      
       <nav>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
           <li><a href="index.html#home" class="nav-link">HOME</a></li>
           <li><a href="index.html#sobre" class="nav-link">SOBRE</a></li>
           <li><a href="index.html#linhas" class="nav-link">LINHAS</a></li>
@@ -505,7 +548,15 @@
           <li><a href="cursos.html" class="nav-link">CURSO</a></li>
         </ul>
       </nav>
-      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+        
+        <!-- Ícone do Menu Hambúrguer -->
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -516,7 +567,7 @@
       <div class="service-content">
         <div>
           <h3 class="service-title">Aplicação de Mega Hair</h3>
-          <p>Realizamos a aplicação de Mega Hair personalizada, utilizando fios selecionados de nosso acervo exclusivo ou o cabelo trazido pela própria cliente.<br>Oferecemos soluções sob medida com técnicas avançadas, definidas de acordo com a estrutura capilar e o objetivo de cada transformação.</p>
+          <p>Trabalhamos com aplicação de Mega Hair personalizada, utilizando cabelos adquiridos em nossas lojas ou o cabelo da própria cliente.<br>Oferecemos diferentes técnicas, escolhidas de acordo com o cabelo, a necessidade e o resultado desejado.</p>
           
           <ul class="service-features">
             <li>Ponto americano costurado</li>
@@ -541,8 +592,8 @@
     <div class="service-card">
       <div class="service-content">
         <div>
-          <h3 class="service-title">Manutenção Premium</h3>
-          <p>A manutenção periódica garante a saúde do seu cabelo natural, a durabilidade das extensões e um acabamento sempre impecável.<br>Realizada em intervalos de 1 a 3 meses, variando conforme a técnica aplicada, o ritmo de crescimento dos fios e as necessidades de cada cliente.</p>
+          <h3 class="service-title">Manutenção de Mega hair e prótese capilar</h3>
+          <p>Manutenções realizadas a cada 1 a 3 meses, de acordo com a técnica, o crescimento dos fios e a necessidade de cada cliente.</p>
           
           <ul class="service-features">
             <li>Manutenção de todas as técnicas feita no nosso estúdio</li>
@@ -551,13 +602,13 @@
           </ul>
         </div>
         
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Gostaria%20de%20agendar%20minha%20Manutenção%20Premium." target="_blank" rel="noopener" class="btn-card-gold">
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Gostaria%20de%20agendar%20minha%20Manutenção%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-card-gold">
           AGENDAR MANUTENÇÃO
         </a>
       </div>
 
       <div class="service-image">
-        <img src="jc3.jpeg" alt="Manutenção Premium de Mega Hair" onerror="this.parentElement.innerHTML = '[IMAGEM: MANUTENÇÃO]';">
+        <img src="jc3.jpeg" alt="Manutenção de Mega Hair" onerror="this.parentElement.innerHTML = '[IMAGEM: MANUTENÇÃO]';">
       </div>
     </div>
 
@@ -565,7 +616,7 @@
       <div class="service-content">
         <div>
           <h3 class="service-title">Personalização & Coloração</h3>
-          <p>Personalizamos a cor do Mega Hair para harmonizar perfeitamente com a tonalidade do seu cabelo natural, criando nuances, mechas e mesclas exclusivas para um acabamento imperceptível.</p>
+          <p>Personalizamos a cor do Mega Hair para harmonizar perfeitamente com o cabelo da cliente, criando tons, nuances e mesclas para um resultado natural e exclusivo.</p>
           
           <ul class="service-features">
             <li>Moreno iluminado sob medida nas extensões</li>
@@ -588,8 +639,8 @@
     <div class="service-card">
       <div class="service-content">
         <div>
-          <h3 class="service-title">Consultoria Visagista</h3>
-          <p>Sessão individual de análise capilar para escolher a densidade, gramatura, comprimento e tom ideais para a sua rotina e estilo.</p>
+          <h3 class="service-title">Avaliação Personalizada</h3>
+          <p>Análise individual para definir o cabelo, técnica, quantidade, comprimento e tonalidade mais adequados para você, considerando seu cabelo natural e o resultado desejado.</p>
           
           <ul class="service-features">
             <li>Análise de densidade e textura capilar</li>
@@ -599,13 +650,13 @@
           </ul>
         </div>
         
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Quero%20agendar%20uma%20Consultoria%20Visagista%20na%20Mega%20Absolutta." target="_blank" rel="noopener" class="btn-card-gold">
-          SOLICITAR CONSULTORIA
+        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Quero%20agendar%20uma%20Avaliação%20Personalizada%20na%20Mega%20Absolutta." target="_blank" rel="noopener" class="btn-card-gold">
+          SOLICITAR AVALIAÇÃO
         </a>
       </div>
 
       <div class="service-image">
-        <img src="jc3.jpeg" alt="Consultoria Visagista" onerror="this.parentElement.innerHTML = '[IMAGEM: CONSULTORIA]';">
+        <img src="jc3.jpeg" alt="Avaliação Personalizada" onerror="this.parentElement.innerHTML = '[IMAGEM: AVALIAÇÃO]';">
       </div>
     </div>
 
@@ -670,7 +721,7 @@
   <section class="cta-section">
     <h2>Pronta para sua transformação?</h2>
     <p>Fale diretamente com nossa equipe no WhatsApp e agende seu horário exclusivo.</p>
-    <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços." target="_blank" rel="noopener" class="btn-gold">Contate-nos</a>
+    <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços." target="_blank" rel="noopener" class="btn-gold">Falar no WhatsApp</a>
   </section>
 
   <!-- FOOTER IDÊNTICO À HOME -->
@@ -710,6 +761,24 @@
   <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
+
+  <!-- SCRIPT PARA ABRIR E FECHAR O MENU NO CELULAR -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      const icon = document.getElementById('menuIcon');
+      
+      menu.classList.toggle('active');
+      
+      if (menu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+  </script>
 
 </body>
 </html>
