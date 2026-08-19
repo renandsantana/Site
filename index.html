@@ -1,410 +1,345 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mega Absolutta | Josiane Cristina — Mega Hair & Extensões</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="style.css">
-
-  <!-- AJUSTES DO MENU MOBILE PARA O INDEX -->
-  <style>
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--gold-primary);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    @media (max-width: 992px) {
-      .mobile-menu-btn { display: block; }
-
-      .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(10, 10, 10, 0.98);
-        border-bottom: 1px solid var(--border-color);
-        flex-direction: column;
-        padding: 20px 0;
-        gap: 15px;
-        text-align: center;
-        display: none;
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .logo a {
-        font-size: 1.1rem;
-        letter-spacing: 1px;
-      }
-
-      .navbar .btn-gold {
-        padding: 8px 16px;
-        font-size: 0.7rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mega Absolutta | Josiane Cristina — Mega Hair & Extensões</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- CABEÇALHO -->
+<header class="navbar">
+<div class="container nav-container">
+<div class="logo">
+<a href="#home">MEGA ABSOLUTTA</a>
+</div>
+<nav>
+<ul class="nav-menu" id="navMenu">
+<li><a href="#home" class="nav-link active" onclick="closeMenu()">HOME</a></li>
+<li><a href="#sobre" class="nav-link" onclick="closeMenu()">SOBRE</a></li>
+<li><a href="#linhas" class="nav-link" onclick="closeMenu()">LINHAS</a></li>
+<li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
+<li><a href="cursos.html" class="nav-link">CURSOS</a></li>
+<li><a href="cadastro.html" class="nav-link">CADASTRO VIP</a></li>
+</ul>
+</nav>
+<div style="display: flex; align-items: center; gap: 15px;">
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
+<!-- Botão Hambúrguer Mobile -->
+<button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+<i class="fa-solid fa-bars" id="menuIcon"></i>
+</button>
+</div>
+</div>
+</header>
 
-  <!-- CABEÇALHO -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo">
-        <a href="#home">MEGA ABSOLUTTA</a>
-      </div>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#home" class="nav-link active" onclick="closeMenu()">HOME</a></li>
-          <li><a href="#sobre" class="nav-link" onclick="closeMenu()">SOBRE</a></li>
-          <li><a href="#linhas" class="nav-link" onclick="closeMenu()">LINHAS</a></li>
-          <li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
-          <li><a href="cursos.html" class="nav-link">CURSOS</a></li>
-        </ul>
-      </nav>
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+<div class="hero-content-wrapper">
+<div class="hero-text">
+<span class="hero-tag">Josiane Cristina · <br>Especialista em Mega Hair<br>e Prótese Capilar</span>
+<h1 class="hero-title">Autoestima<br>em cada <span>fio.</span></h1>
+<p class="hero-desc">
+Mais de 10 anos transformando autoestima através da técnica de Mega Hair — para clientes que querem se ver, e para profissionais que querem aprender.
+</p>
+<div class="hero-actions">
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20atendimento." target="_blank" rel="noopener" class="btn-gold">
+Agendar Horário
+</a>
+<a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" class="btn-outline">
+@mega_absolutta
+</a>
+</div>
+</div>
+</div>
+<div class="hero-bg-image">
+<img src="jc3.jpeg" alt="Josiane Cristina - Mega Hair">
+</div>
+</section>
 
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20e%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="btn-gold">Agendar Horário</a>
-        
-        <!-- Botão Hambúrguer Mobile -->
-        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
-          <i class="fa-solid fa-bars" id="menuIcon"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+<!-- TICKER -->
+<div class="ticker-bar">
+<div class="ticker-track">
+<div class="ticker-item">+7.000 atendimentos <span>✦</span></div>
+<div class="ticker-item">+10 anos de experiência <span>✦</span></div>
+<div class="ticker-item">11,3 mil seguidoras <span>✦</span></div>
+<div class="ticker-item">Ribeirão Preto · Araxá <span>✦</span></div>
+<div class="ticker-item">+7.000 atendimentos <span>✦</span></div>
+<div class="ticker-item">+10 anos de experiência <span>✦</span></div>
+<div class="ticker-item">11,3 mil seguidoras <span>✦</span></div>
+<div class="ticker-item">Ribeirão Preto · Araxá <span>✦</span></div>
+</div>
+</div>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <div class="hero-content-wrapper">
-      <div class="hero-text">
-        <span class="hero-tag">Josiane Cristina · <br>Especialista em Mega Hair<br>e Prótese Capilar</span>
-        <h1 class="hero-title">Autoestima<br>em cada <span>fio.</span></h1>
-        <p class="hero-desc">
-          Mais de 10 anos transformando autoestima através da técnica de Mega Hair — para clientes que querem se ver, e para profissionais que querem aprender.
-        </p>
-        
-        <div class="hero-actions">
-          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20atendimento." target="_blank" rel="noopener" class="btn-gold">
-            Agendar Horário
-          </a>
-          <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" class="btn-outline">
-            @mega_absolutta
-          </a>
-        </div>
-      </div>
-    </div>
+<!-- NÚMEROS -->
+<section class="stats-section">
+<div class="container">
+<div class="stats-grid">
+<div>
+<div class="stat-number">+7k</div>
+<div class="stat-label">Atendimentos Realizados</div>
+</div>
+<div>
+<div class="stat-number">10+</div>
+<div class="stat-label">Anos de Experiência</div>
+</div>
+<div>
+<div class="stat-number">11k</div>
+<div class="stat-label">Seguidoras no Instagram</div>
+</div>
+<div>
+<div class="stat-number">02</div>
+<div class="stat-label">Cidades Atendidas</div>
+</div>
+</div>
+</div>
+</section>
 
-    <div class="hero-bg-image">
-      <img src="jc3.jpeg" alt="Josiane Cristina - Mega Hair">
-    </div>
-  </section>
+<!-- DIFERENCIAIS -->
+<section class="section-padding">
+<div class="container text-center">
+<span class="gold-subtitle" style="text-align: center;">Nossos Pilares</span>
+<h2 class="section-title gold-text" style="text-align: center;">O que faz a Mega Absolutta ser diferente</h2>
+<p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; text-align: center;">
+Técnicas aprimoradas continuamente para oferecer o máximo conforto, naturalidade imperceptível e preservação da saúde dos seus fios.
+</p>
+<div class="pilar-badges">
+<div class="badge">
+<div class="badge-header">
+<i class="fa-solid fa-heart-pulse"></i>
+<span class="badge-title">Saúde</span>
+</div>
+<p class="badge-text">A saúde dos seus fios é prioridade em cada atendimento. Utilizamos apenas cabelos naturais selecionados e técnicas que respeitam a estrutura do cabelo e do couro cabeludo.</p>
+</div>
+<div class="badge">
+<div class="badge-header">
+<i class="fa-solid fa-gem"></i>
+<span class="badge-title">Qualidade</span>
+</div>
+<p class="badge-text">Uma seleção criteriosa de cabelos naturais, com diferentes espessuras, comprimentos e características. Cada escolha é feita para garantir um acabamento harmonioso e compatível.</p>
+</div>
+<div class="badge">
+<div class="badge-header">
+<i class="fa-solid fa-shield-halved"></i>
+<span class="badge-title">Segurança</span>
+</div>
+<p class="badge-text">A avaliação personalizada é essencial. Ela nos permite definir a técnica, a quantidade e o tipo de cabelo ideais, proporcionando um procedimento seguro e preciso.</p>
+</div>
+<div class="badge">
+<div class="badge-header">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+<span class="badge-title">Tecnologia</span>
+</div>
+<p class="badge-text">Aplicamos técnicas modernas e constantemente aprimoradas para proporcionar mais conforto, naturalidade e durabilidade com acabamento imperceptível.</p>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- TICKER -->
-  <div class="ticker-bar">
-    <div class="ticker-track">
-      <div class="ticker-item">+7.000 atendimentos <span>✦</span></div>
-      <div class="ticker-item">+10 anos de experiência <span>✦</span></div>
-      <div class="ticker-item">11,3 mil seguidoras <span>✦</span></div>
-      <div class="ticker-item">Ribeirão Preto · Araxá <span>✦</span></div>
-      <div class="ticker-item">+7.000 atendimentos <span>✦</span></div>
-      <div class="ticker-item">+10 anos de experiência <span>✦</span></div>
-      <div class="ticker-item">11,3 mil seguidoras <span>✦</span></div>
-      <div class="ticker-item">Ribeirão Preto · Araxá <span>✦</span></div>
-    </div>
-  </div>
+<!-- CONCEITO -->
+<section id="sobre" class="section-padding" style="background: var(--bg-card);">
+<div class="container">
+<div class="conceito-grid">
+<div>
+<img src="jc2.jpeg" alt="Sobre a Mega Absolutta" style="border-radius: 8px;">
+</div>
+<div>
+<span class="gold-subtitle">Conceito Mega Absolutta</span>
+<h2 class="section-title">Especialista em transformar a <span class="gold-text">autoestima.</span></h2>
+<p style="color: var(--text-muted); margin-bottom: 15px;">
+Na Mega Absolutta, acreditamos que transformar cabelos é também transformar a autoestima. Unimos técnica, qualidade e dedicação para oferecer resultados naturais, seguros e personalizados.
+</p>
+<div class="quote-box">
+"Autoestima para clientes. Conhecimento para profissionais."
+</div>
+<p style="color: var(--text-muted);">
+Nas extensões Absolutta cada aplicação é pensada para oferecer uma experiência única. Trabalhamos com cabelos naturais selecionados e uma técnica de alta performance que proporciona um acabamento invisível, confortável e duradouro.
+</p>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- NÚMEROS -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div>
-          <div class="stat-number">+7k</div>
-          <div class="stat-label">Atendimentos Realizados</div>
-        </div>
-        <div>
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Anos de Experiência</div>
-        </div>
-        <div>
-          <div class="stat-number">11k</div>
-          <div class="stat-label">Seguidoras no Instagram</div>
-        </div>
-        <div>
-          <div class="stat-number">02</div>
-          <div class="stat-label">Cidades Atendidas</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- CATÁLOGO / LINHAS -->
+<section id="linhas" class="section-padding">
+<div class="container">
+<div style="text-align: center; margin-bottom: 40px;">
+<span class="gold-subtitle">Catálogo Exclusivo</span>
+<h2 class="section-title">Conheça Nossas Linhas</h2>
+</div>
+<div class="detalhe-modelo">
+<div class="container-detalhe">
+<div class="detalhe-texto">
+<span class="gold-subtitle">LINHA EM DESTAQUE</span>
+<h2 id="detalhe-titulo" class="titulo-modelo">brasileiros regionais</h2>
+<p id="detalhe-descricao" class="descricao-linha">
+Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.
+</p>
+</div>
+<div class="detalhe-imagem">
+<img id="detalhe-img" src="regionalbrasil_detalhe.png" alt="Detalhe do Cabelo">
+</div>
+</div>
+</div>
+<div class="grid-4-linhas">
+<div class="card-modelo active" onclick="trocarModelo('regional', this)">
+<img src="regionalbrasil.png" alt="Brasileiros Regionais">
+<h3>Nossa linha<strong class="gold-text">Brasileiros Regionais</strong></h3>
+</div>
+<div class="card-modelo" onclick="trocarModelo('sul', this)">
+<img src="brasileirosul.png" alt="Brasileiros do Sul">
+<h3>Nossa linha<strong class="gold-text">Brasileiros do Sul</strong></h3>
+</div>
+<div class="card-modelo" onclick="trocarModelo('vietnamita', this)">
+<img src="vietnamita.png" alt="Vietnamitas">
+<h3>Nossa linha<strong class="gold-text">Vietnamitas</strong></h3>
+</div>
+<div class="card-modelo" onclick="trocarModelo('personalizados', this)">
+<img src="personalizados.png" alt="Personalizados">
+<h3>Nossa linha<strong class="gold-text">Personalizados</strong></h3>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- DIFERENCIAIS -->
-  <section class="section-padding">
-    <div class="container text-center">
-      <span class="gold-subtitle" style="text-align: center;">Nossos Pilares</span>
-      <h2 class="section-title gold-text" style="text-align: center;">O que faz a Mega Absolutta ser diferente</h2>
-      <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; text-align: center;">
-        Técnicas aprimoradas continuamente para oferecer o máximo conforto, naturalidade imperceptível e preservação da saúde dos seus fios.
-      </p>
+<!-- UNIDADES -->
+<section id="unidades" class="section-padding" style="background: var(--bg-card);">
+<div class="container">
+<div style="text-align: center;">
+<span class="gold-subtitle">Onde Estamos</span>
+<h2 class="section-title">Duas cidades, o mesmo cuidado.</h2>
+</div>
+<div class="unidades-grid">
+<div class="unidade-card">
+<span class="unidade-badge">Atendimento Fixo</span>
+<h3>Ribeirão Preto — SP</h3>
+<p>
+Edifício Boulevard<br>
+Praça Cornélio Pires, 91 — Jardim América<br>
+Ribeirão Preto - SP
+</p>
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Ribeir%C3%A3o%20Preto." target="_blank" rel="noopener" class="btn-gold">Agendar em Ribeirão Preto →</a>
+</div>
+<div class="unidade-card">
+<span class="unidade-badge">A cada 15 dias</span>
+<h3>Araxá — MG</h3>
+<p>
+Atendimentos quinzenais com hora marcada.<br>
+Consulte a disponibilidade e garanta a sua data.
+</p>
+<a href="https://api.whatsapp.com/send?phone=553488033811&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Arax%C3%A1." target="_blank" rel="noopener" class="btn-gold">Agendar em Araxá →</a>
+</div>
+</div>
+</div>
+</section>
 
-      <div class="pilar-badges">
-        <div class="badge">
-          <div class="badge-header">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <span class="badge-title">Saúde</span>
-          </div>
-          <p class="badge-text">A saúde dos seus fios é prioridade em cada atendimento. Utilizamos apenas cabelos naturais selecionados e técnicas que respeitam a estrutura do cabelo e do couro cabeludo.</p>
-        </div>
+<!-- RODAPÉ -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4 class="gold-text">MEGA ABSOLUTTA</h4>
+<p style="color: var(--text-muted); font-size: 0.85rem;">Transformando vidas e elevando a autoestima através de extensões de alta qualidade.</p>
+</div>
+<div class="footer-col">
+<h4 class="gold-text">Navegação</h4>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#sobre">Sobre Nós</a></li>
+<li><a href="#linhas">Linhas de Cabelos</a></li>
+<li><a href="servico.html">Serviços</a></li>
+<li><a href="cursos.html">Cursos</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 class="gold-text">Atendimento</h4>
+<p style="color: var(--text-muted); font-size: 0.85rem;">Ribeirão Preto - SP & Araxá - MG</p>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Seg a Sex: 08h às 18h</p>
+</div>
+<div class="footer-col">
+<h4 class="gold-text">Redes Sociais</h4>
+<a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" style="color: var(--gold-primary); font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+<div class="copyright">
+<p>&copy; 2026 MEGA ABSOLUTTA BRASIL — TODOS OS DIREITOS RESERVADOS</p>
+</div>
+</div>
+</footer>
 
-        <div class="badge">
-          <div class="badge-header">
-            <i class="fa-solid fa-gem"></i>
-            <span class="badge-title">Qualidade</span>
-          </div>
-          <p class="badge-text">Uma seleção criteriosa de cabelos naturais, com diferentes espessuras, comprimentos e características. Cada escolha é feita para garantir um acabamento harmonioso e compatível.</p>
-        </div>
+<a href="https://api.whatsapp.com/send?phone=5534880338118&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
-        <div class="badge">
-          <div class="badge-header">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span class="badge-title">Segurança</span>
-          </div>
-          <p class="badge-text">A avaliação personalizada é essencial. Ela nos permite definir a técnica, a quantidade e o tipo de cabelo ideais, proporcionando um procedimento seguro e preciso.</p>
-        </div>
+<!-- SCRIPTS DA PÁGINA -->
+<script>
+// Controle das Linhas de Cabelo
+const dadosModelos = {
+  regional: {
+    titulo: 'brasileiros regionais',
+    descricao: 'Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.',
+    imagem: 'regionalbrasil_detalhe.png'
+  },
+  sul: {
+    titulo: 'brasileiros do sul',
+    descricao: 'Fios extremamente finos, sedosos e de tonalidades naturalmente mais claras. Cabelos raros e nobres, perfeitos para quem exige máxima leveza, fluidez e alta qualidade.',
+    imagem: 'brasileirosul_detalhe.png'
+  },
+  vietnamita: {
+    titulo: 'vietnamita',
+    descricao: 'Conhecidos por sua resistência excepcional, densidade e brilho intenso, os cabelos vietnamitas possuem fios encorpados (de espessura média a grossa) com caimento impecável. Suportam bem estilizações e possuem altíssima durabilidade.',
+    imagem: 'vietnamita_detalhe.png'
+  },
+  personalizados: {
+    titulo: 'personalizados',
+    descricao: 'Linha sob medida desenvolvida de acordo com a preferência do cliente. Processo artesanal de seleção, textura e tonalidade para garantir um resultado único e exclusivo.',
+    imagem: 'personalizados_detalhe.png'
+  }
+};
 
-        <div class="badge">
-          <div class="badge-header">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span class="badge-title">Tecnologia</span>
-          </div>
-          <p class="badge-text">Aplicamos técnicas modernas e constantemente aprimoradas para proporcionar mais conforto, naturalidade e durabilidade com acabamento imperceptível.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+function trocarModelo(chave, elemento) {
+  const dados = dadosModelos[chave];
+  const imgElement = document.getElementById('detalhe-img');
 
-  <!-- CONCEITO -->
-  <section id="sobre" class="section-padding" style="background: var(--bg-card);">
-    <div class="container">
-      <div class="conceito-grid">
-        <div>
-          <img src="jc2.jpeg" alt="Sobre a Mega Absolutta" style="border-radius: 8px;">
-        </div>
-        <div>
-          <span class="gold-subtitle">Conceito Mega Absolutta</span>
-          <h2 class="section-title">Especialista em transformar a <span class="gold-text">autoestima.</span></h2>
-          <p style="color: var(--text-muted); margin-bottom: 15px;">
-            Na Mega Absolutta, acreditamos que transformar cabelos é também transformar a autoestima. Unimos técnica, qualidade e dedicação para oferecer resultados naturais, seguros e personalizados.
-          </p>
-          <div class="quote-box">
-            “Autoestima para clientes. Conhecimento para profissionais.”
-          </div>
-          <p style="color: var(--text-muted);">
-            Nas extensões Absolutta cada aplicação é pensada para oferecer uma experiência única. Trabalhamos com cabelos naturais selecionados e uma técnica de alta performance que proporciona um acabamento invisível, confortável e duradouro.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  document.querySelectorAll('.card-modelo').forEach(card => card.classList.remove('active'));
+  if (elemento) elemento.classList.add('active');
 
-  <!-- CATÁLOGO / LINHAS -->
-  <section id="linhas" class="section-padding">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <span class="gold-subtitle">Catálogo Exclusivo</span>
-        <h2 class="section-title">Conheça Nossas Linhas</h2>
-      </div>
+  if (dados) {
+    imgElement.style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('detalhe-titulo').textContent = dados.titulo;
+      document.getElementById('detalhe-descricao').textContent = dados.descricao;
+      imgElement.src = dados.imagem;
+      imgElement.style.opacity = '1';
+    }, 200);
+  }
+}
 
-      <div class="detalhe-modelo">
-        <div class="container-detalhe">
-          <div class="detalhe-texto">
-            <span class="gold-subtitle">LINHA EM DESTAQUE</span>
-            <h2 id="detalhe-titulo" class="titulo-modelo">brasileiros regionais</h2>
-            <p id="detalhe-descricao" class="descricao-linha">
-              Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.
-            </p>
-          </div>
-          <div class="detalhe-imagem">
-            <img id="detalhe-img" src="regionalbrasil_detalhe.png" alt="Detalhe do Cabelo">
-          </div>
-        </div>
-      </div>
+// Controle do Menu Hambúrguer Mobile
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('active');
+  if (menu.classList.contains('active')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-xmark');
+  } else {
+    icon.classList.remove('fa-xmark');
+    icon.classList.add('fa-bars');
+  }
+}
 
-      <div class="grid-4-linhas">
-        <div class="card-modelo active" onclick="trocarModelo('regional', this)">
-          <img src="regionalbrasil.png" alt="Brasileiros Regionais">
-          <h3>Nossa linha<strong class="gold-text">Brasileiros Regionais</strong></h3>
-        </div>
-
-        <div class="card-modelo" onclick="trocarModelo('sul', this)">
-          <img src="brasileirosul.png" alt="Brasileiros do Sul">
-          <h3>Nossa linha<strong class="gold-text">Brasileiros do Sul</strong></h3>
-        </div>
-
-        <div class="card-modelo" onclick="trocarModelo('vietnamita', this)">
-          <img src="vietnamita.png" alt="Vietnamitas">
-          <h3>Nossa linha<strong class="gold-text">Vietnamitas</strong></h3>
-        </div>
-
-        <div class="card-modelo" onclick="trocarModelo('personalizados', this)">
-          <img src="personalizados.png" alt="Personalizados">
-          <h3>Nossa linha<strong class="gold-text">Personalizados</strong></h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- UNIDADES -->
-  <section id="unidades" class="section-padding" style="background: var(--bg-card);">
-    <div class="container">
-      <div style="text-align: center;">
-        <span class="gold-subtitle">Onde Estamos</span>
-        <h2 class="section-title">Duas cidades, o mesmo cuidado.</h2>
-      </div>
-
-      <div class="unidades-grid">
-        <div class="unidade-card">
-          <span class="unidade-badge">Atendimento Fixo</span>
-          <h3>Ribeirão Preto — SP</h3>
-          <p>
-            Edifício Boulevard<br>
-            Praça Cornélio Pires, 91 — Jardim América<br>
-            Ribeirão Preto - SP
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Ribeir%C3%A3o%20Preto." target="_blank" rel="noopener" class="btn-gold">Agendar em Ribeirão Preto →</a>
-        </div>
-
-        <div class="unidade-card">
-          <span class="unidade-badge">A cada 15 dias</span>
-          <h3>Araxá — MG</h3>
-          <p>
-            Atendimentos quinzenais com hora marcada.<br>
-            Consulte a disponibilidade e garanta a sua data.
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=553488033811&text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20a%20unidade%20de%20Arax%C3%A1." target="_blank" rel="noopener" class="btn-gold">Agendar em Araxá →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RODAPÉ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4 class="gold-text">MEGA ABSOLUTTA</h4>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">Transformando vidas e elevando a autoestima através de extensões de alta qualidade.</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="gold-text">Navegação</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre Nós</a></li>
-            <li><a href="#linhas">Linhas de Cabelos</a></li>
-            <li><a href="servico.html">Serviços</a></li>
-            <li><a href="cursos.html">Cursos</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 class="gold-text">Atendimento</h4>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">Ribeirão Preto - SP & Araxá - MG</p>
-          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Seg a Sex: 08h às 18h</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="gold-text">Redes Sociais</h4>
-          <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" style="color: var(--gold-primary); font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2026 MEGA ABSOLUTTA BRASIL — TODOS OS DIREITOS RESERVADOS</p>
-      </div>
-    </div>
-  </footer>
-
-  <a href="https://api.whatsapp.com/send?phone=5534880338118&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-btn" target="_blank" rel="noopener">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- SCRIPTS DA PÁGINA -->
-  <script>
-    // Controle das Linhas de Cabelo
-    const dadosModelos = {
-      regional: {
-        titulo: 'brasileiros regionais',
-        descricao: 'Selecionados criteriosamente, os cabelos brasileiros regionais oferecem leveza, movimento natural e excelente adaptação a diversos tipos de fios. Ideais para quem busca um acabamento sutil e caimento perfeito.',
-        imagem: 'regionalbrasil_detalhe.png'
-      },
-      sul: {
-        titulo: 'brasileiros do sul',
-        descricao: 'Fios extremamente finos, sedosos e de tonalidades naturalmente mais claras. Cabelos raros e nobres, perfeitos para quem exige máxima leveza, fluidez e alta qualidade.',
-        imagem: 'brasileirosul_detalhe.png'
-      },
-      vietnamita: {
-        titulo: 'vietnamita',
-        descricao: 'Conhecidos por sua resistência excepcional, densidade e brilho intenso, os cabelos vietnamitas possuem fios encorpados (de espessura média a grossa) com caimento impecável. Suportam bem estilizações e possuem altíssima durabilidade.',
-        imagem: 'vietnamita_detalhe.png'
-      },
-      personalizados: {
-        titulo: 'personalizados',
-        descricao: 'Linha sob medida desenvolvida de acordo com a preferência do cliente. Processo artesanal de seleção, textura e tonalidade para garantir um resultado único e exclusivo.',
-        imagem: 'personalizados_detalhe.png'
-      }
-    };
-
-    function trocarModelo(chave, elemento) {
-      const dados = dadosModelos[chave];
-      const imgElement = document.getElementById('detalhe-img');
-
-      document.querySelectorAll('.card-modelo').forEach(card => card.classList.remove('active'));
-      if (elemento) elemento.classList.add('active');
-
-      if (dados) {
-        imgElement.style.opacity = '0';
-
-        setTimeout(() => {
-          document.getElementById('detalhe-titulo').textContent = dados.titulo;
-          document.getElementById('detalhe-descricao').textContent = dados.descricao;
-          imgElement.src = dados.imagem;
-          imgElement.style.opacity = '1';
-        }, 200);
-      }
-    }
-
-    // Controle do Menu Hambúrguer Mobile
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      const icon = document.getElementById('menuIcon');
-      
-      menu.classList.toggle('active');
-      
-      if (menu.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-      } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
-    }
-
-    function closeMenu() {
-      const menu = document.getElementById('navMenu');
-      const icon = document.getElementById('menuIcon');
-      
-      menu.classList.remove('active');
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    }
-  </script>
+function closeMenu() {
+  const menu = document.getElementById('navMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.remove('active');
+  icon.classList.remove('fa-xmark');
+  icon.classList.add('fa-bars');
+}
+</script>
 </body>
 </html>

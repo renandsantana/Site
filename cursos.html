@@ -1,584 +1,216 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mega Absolutta | Cursos de Capacitação Profissional</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    /* =========================================================
-       VARIÁVEIS DE DESIGN DA HOME (DARK & GOLD)
-       ========================================================= */
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #141414;
-      --bg-card-hover: #1c1c1c;
-      --gold-primary: #d4af37;
-      --gold-light: #f3e5ab;
-      --gold-dark: #aa820a;
-      --text-main: #f0f0f0;
-      --text-muted: #a0a0a0;
-      --border-color: rgba(212, 175, 55, 0.2);
-      --font-title: 'Playfair Display', serif;
-      --font-body: 'Montserrat', sans-serif;
-      --font-hand: 'Caveat', cursive;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Reset Geral */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .section-padding {
-      padding: 100px 0;
-    }
-
-    .gold-text {
-      color: var(--gold-primary);
-    }
-
-    .gold-subtitle {
-      color: var(--gold-primary);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-family: var(--font-title);
-      font-size: 2.5rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    /* =========================================================
-       Navegação (Header & Navbar)
-       ========================================================= */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      transition: var(--transition);
-      padding: 20px 0;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo a {
-      font-family: var(--font-title);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #fff;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 30px;
-    }
-
-    .nav-link {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--gold-primary);
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-      color: #000;
-      padding: 12px 28px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: var(--transition);
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
-    }
-
-    /* =========================================================
-       Hero Section do Curso
-       ========================================================= */
-    .hero-curso {
-      padding-top: 160px;
-      padding-bottom: 80px;
-      background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,1) 100%);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero-curso h1 {
-      font-family: var(--font-title);
-      font-size: 3.2rem;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero-curso p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 30px;
-    }
-
-    .hero-badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .hero-badge {
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid var(--border-color);
-      color: var(--gold-primary);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* =========================================================
-       Módulos / Conteúdo Programático
-       ========================================================= */
-    .modulos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .modulo-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 30px;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .modulo-card:hover {
-      border-color: var(--gold-primary);
-      background: var(--bg-card-hover);
-      transform: translateY(-5px);
-    }
-
-    .modulo-icon {
-      font-size: 2rem;
-      color: var(--gold-primary);
-      margin-bottom: 20px;
-    }
-
-    .modulo-card h3 {
-      font-family: var(--font-title);
-      font-size: 1.3rem;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-
-    .modulo-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    /* =========================================================
-       Técnicas Ensinadas (Destaque)
-       ========================================================= */
-    .tecnicas-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .tecnica-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 40px;
-      transition: var(--transition);
-    }
-
-    .tecnica-box:hover {
-      border-color: var(--gold-primary);
-    }
-
-    .tecnica-box h3 {
-      font-family: var(--font-title);
-      font-size: 1.6rem;
-      color: var(--gold-primary);
-      margin-bottom: 15px;
-    }
-
-    .tecnica-box p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    .tecnica-features {
-      list-style: none;
-      padding: 0;
-    }
-
-    .tecnica-features li {
-      font-size: 0.88rem;
-      color: var(--text-main);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .tecnica-features li i {
-      color: var(--gold-primary);
-      font-size: 0.85rem;
-    }
-
-    /* =========================================================
-       Rodapé (Idêntico à Home)
-       ========================================================= */
-    .footer {
-      background: #050505;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 80px 0 30px 0;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .footer-col h4 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-col ul li a {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      transition: var(--transition);
-    }
-
-    .footer-col ul li a:hover {
-      color: var(--gold-primary);
-    }
-
-    .copyright {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 30px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-    }
-
-    /* Botão Flutuante do WhatsApp */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-      z-index: 999;
-      transition: var(--transition);
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
-
-    /* Responsividade */
-    @media (max-width: 992px) {
-      .hero-grid, .tecnicas-container {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .nav-menu {
-        display: none;
-      }
-      .hero-curso h1 {
-        font-size: 2.4rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mega Absolutta | Cursos de Capacitação Profissional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- NAVBAR IDÊNTICA À HOME -->
+<header class="navbar">
+<div class="container nav-container">
+<div class="logo">
+<a href="index.html#home">MEGA ABSOLUTTA</a>
+</div>
+<nav>
+<ul class="nav-menu" id="navMenu">
+<li><a href="index.html#home" class="nav-link" onclick="closeMenu()">HOME</a></li>
+<li><a href="index.html#sobre" class="nav-link" onclick="closeMenu()">SOBRE</a></li>
+<li><a href="index.html#linhas" class="nav-link" onclick="closeMenu()">LINHAS</a></li>
+<li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
+<li><a href="cursos.html" class="nav-link active">CURSO</a></li>
+</ul>
+</nav>
+<div style="display: flex; align-items: center; gap: 15px;">
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Curso%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Inscreva-se Já</a>
+<!-- Botão Hambúrguer Mobile -->
+<button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
+<i class="fa-solid fa-bars" id="menuIcon"></i>
+</button>
+</div>
+</div>
+</header>
 
-  <!-- NAVBAR IDÊNTICA À HOME -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo">
-        <a href="index.html#home">MEGA ABSOLUTTA</a>
-      </div>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html#home" class="nav-link">HOME</a></li>
-          <li><a href="index.html#sobre" class="nav-link">SOBRE</a></li>
-          <li><a href="index.html#linhas" class="nav-link">LINHAS</a></li>
-          <li><a href="servico.html" class="nav-link">SERVIÇOS</a></li>
-          <li><a href="cursos.html" class="nav-link active">CURSO</a></li>
-        </ul>
-      </nav>
-      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Curso%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Inscreva-se Já</a>
-    </div>
-  </header>
+<!-- HERO SECTION DO CURSO -->
+<section class="hero-curso">
+<div class="container">
+<div class="hero-grid">
+<div>
+<span class="gold-subtitle">Capacitação Profissional</span>
+<h1>Curso Profissional de <span class="gold-text">Mega Hair & Extensões</span></h1>
+<p>
+Domine as técnicas mais procuradas nos melhores salões do país. Aprenda avaliação de fios, precificação, aplicação de Ponto Americano, Tela Invisível e gestão de credibilidade no mercado da beleza.
+</p>
+<div class="hero-badge-list">
+<span class="hero-badge">✦ Formação Teórica & Prática</span>
+<span class="hero-badge">✦ Apostila Oficial</span>
+<span class="hero-badge">✦ Suporte Especializado</span>
+</div>
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Curso%20de%20Capacitação%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Garantir Minha Vaga</a>
+</div>
+<div>
+<img src="jc2.jpeg" alt="Curso Profissional Mega Absolutta" style="border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+</div>
+</div>
+</div>
+</section>
 
-  <!-- HERO SECTION DO CURSO -->
-  <section class="hero-curso">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <span class="gold-subtitle">Capacitação Profissional</span>
-          <h1>Curso Profissional de <span class="gold-text">Mega Hair & Extensões</span></h1>
-          <p>
-            Domine as técnicas mais procuradas nos melhores salões do país. Aprenda avaliação de fios, precificação, aplicação de Ponto Americano, Tela Invisível e gestão de credibilidade no mercado da beleza.
-          </p>
-          <div class="hero-badge-list">
-            <span class="hero-badge">✦ Formação Teórica & Prática</span>
-            <span class="hero-badge">✦ Apostila Oficial</span>
-            <span class="hero-badge">✦ Suporte Especializado</span>
-          </div>
-          <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20Curso%20de%20Capacitação%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Garantir Minha Vaga</a>
-        </div>
-        <div>
-          <img src="jc2.jpeg" alt="Curso Profissional Mega Absolutta" style="border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- O QUE VOCÊ VAI APRENDER -->
+<section class="section-padding">
+<div class="container">
+<div style="text-align: center; max-width: 700px; margin: 0 auto;">
+<span class="gold-subtitle">Conteúdo Programático</span>
+<h2 class="section-title">O que você vai dominar no curso</h2>
+<p style="color: var(--text-muted);">
+Desenvolvido com base no método exclusivo Mega Absolutta, preparando você para atender clientes exigentes e garantir naturalidade sem danificar o cabelo natural.
+</p>
+</div>
+<div class="modulos-grid">
+<div class="modulo-card">
+<i class="fa-solid fa-magnifying-glass-chart modulo-icon"></i>
+<h3>Avaliação do Fio & Cliente</h3>
+<p>Aprenda a analisar espessura (fino/grosso), curvatura (liso/ondulado/cacheado) e químicas. Escolha o mega hair ideal para evitar marcas e garantir fusão natural.</p>
+</div>
+<div class="modulo-card">
+<i class="fa-solid fa-layer-group modulo-icon"></i>
+<h3>Tipos de Cabelo & Origens</h3>
+<p>Entenda a fundo as diferenças entre Fios Indianos, Vietnamitas, Brasileiros Regionais e Brasileiros do Sul (fio ultra fino e pontas cheias).</p>
+</div>
+<div class="modulo-card">
+<i class="fa-solid fa-scale-balanced modulo-icon"></i>
+<h3>Pesos, Medidas & Precificação</h3>
+<p>Cálculo exato de gramatura para preenchimento (80g a 100g) e alongamento (100g a 300g). Como precificar com justiça valorizando o seu trabalho.</p>
+</div>
+<div class="modulo-card">
+<i class="fa-solid fa-arrows-rotate modulo-icon"></i>
+<h3>Manutenção & Segurança</h3>
+<p>Prazos ideais de manutenção (1 a 3 meses), técnicas de remoção segura, tratamento do couro cabeludo e preservação dos <i>baby hairs</i>.</p>
+</div>
+<div class="modulo-card">
+<i class="fa-solid fa-flask-vial modulo-icon"></i>
+<h3>Procedimentos Químicos</h3>
+<p>Saiba quando e como realizar tinturas e descolorações nas extensões de cabelos humanos com segurança sem danificar a fibra capilar.</p>
+</div>
+<div class="modulo-card">
+<i class="fa-solid fa-award modulo-icon"></i>
+<h3>Credibilidade Profissional</h3>
+<p>Orientações de postura ética, aprimoramento contínuo e retenção de clientes no mercado promissor da beleza estética.</p>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- O QUE VOÇÊ VAI APRENDER -->
-  <section class="section-padding">
-    <div class="container">
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-        <span class="gold-subtitle">Conteúdo Programático</span>
-        <h2 class="section-title">O que você vai dominar no curso</h2>
-        <p style="color: var(--text-muted);">
-          Desenvolvido com base no método exclusivo Mega Absolutta, preparando você para atender clientes exigentes e garantir naturalidade sem danificar o cabelo natural.
-        </p>
-      </div>
+<!-- TÉCNICAS EM DESTAQUE -->
+<section class="section-padding" style="background: var(--bg-card);">
+<div class="container">
+<div style="text-align: center; max-width: 700px; margin: 0 auto;">
+<span class="gold-subtitle">Técnicas Práticas</span>
+<h2 class="section-title">As Táticas Mais Procuradas do Mercado</h2>
+</div>
+<div class="tecnicas-container">
+<!-- PONTO AMERICANO -->
+<div class="tecnica-box">
+<h3>Ponto Americano</h3>
+<p>Técnica tradicional feita com cabelo tecido em metro ou à mão e costurada na base. Altamente procurada por seu excelente custo-benefício, segurança e resistência.</p>
+<ul class="tecnica-features">
+<li><i class="fa-solid fa-gem"></i> Permite amarrar o cabelo e praticar exercícios</li>
+<li><i class="fa-solid fa-gem"></i> Liberdade para ir à praia, piscina e hidratar</li>
+<li><i class="fa-solid fa-gem"></i> Indicado para todos os tipos de cabelo</li>
+<li><i class="fa-solid fa-gem"></i> Manutenção estimada: 2 a 3 meses</li>
+</ul>
+</div>
+<!-- INVISIBLE / TELA INVISÍVEL -->
+<div class="tecnica-box">
+<h3>Invisible / Tela Invisível</h3>
+<p>Técnica moderna feita com tela adesiva, extremamente discreta e delicada. Ideal para clientes com cabelos ultra finos e sensíveis.</p>
+<ul class="tecnica-features">
+<li><i class="fa-solid fa-gem"></i> Acabamento ultra discreto e imperceptível</li>
+<li><i class="fa-solid fa-gem"></i> Especial para fios finos e sensibilizados</li>
+<li><i class="fa-solid fa-gem"></i> Protocolo especial pós-aplicação (48h sem lavar)</li>
+<li><i class="fa-solid fa-gem"></i> Manutenção estimada: 1 a 2 meses</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 
-      <div class="modulos-grid">
-        <div class="modulo-card">
-          <i class="fa-solid fa-magnifying-glass-chart modulo-icon"></i>
-          <h3>Avaliação do Fio & Cliente</h3>
-          <p>Aprenda a analisar espessura (fino/grosso), curvatura (liso/ondulado/cacheado) e químicas. Escolha o mega hair ideal para evitar marcas e garantir fusão natural.</p>
-        </div>
+<!-- CTA DE INSCRIÇÃO -->
+<section class="cta-section section-padding">
+<div class="container text-center">
+<span class="gold-subtitle">Sua Carreira de Sucesso Começa Aqui</span>
+<h2 class="section-title">Acredite! Você pode todas as coisas!</h2>
+<p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 35px auto;">
+Inscreva-se na próxima turma do Curso de Mega Hair da Mega Absolutta e transforme sua trajetória profissional no mercado da beleza.
+</p>
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Quero%20informações%20sobre%20as%20próximas%20turmas%20do%20Curso%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Falar com a Equipe no WhatsApp</a>
+</div>
+</section>
 
-        <div class="modulo-card">
-          <i class="fa-solid fa-layer-group modulo-icon"></i>
-          <h3>Tipos de Cabelo & Origens</h3>
-          <p>Entenda a fundo as diferenças entre Fios Indianos, Vietnamitas, Brasileiros Regionais e Brasileiros do Sul (fio ultra fino e pontas cheias).</p>
-        </div>
+<!-- FOOTER IDÊNTICO À HOME -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4 class="gold-text">MEGA ABSOLUTTA</h4>
+<p style="color: var(--text-muted); font-size: 0.85rem;">Transformando vidas e elevando a autoestima através de extensões de alta qualidade.</p>
+</div>
+<div class="footer-col">
+<h4 class="gold-text">Navegação</h4>
+<ul>
+<li><a href="index.html#home">Home</a></li>
+<li><a href="index.html#sobre">Sobre Nós</a></li>
+<li><a href="index.html#linhas">Linhas de Cabelos</a></li>
+<li><a href="servico.html">Serviços</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4 class="gold-text">Atendimento</h4>
+<p style="color: var(--text-muted); font-size: 0.85rem;">Ribeirão Preto - SP & Araxá - MG</p>
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Seg a Sex: 08h às 18h</p>
+</div>
+<div class="footer-col">
+<h4 class="gold-text">Redes Sociais</h4>
+<a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" style="color: var(--gold-primary); font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+<div class="copyright">
+<p>&copy; 2026 MEGA ABSOLUTTA BRASIL — TODOS OS DIREITOS RESERVADOS</p>
+</div>
+</div>
+</footer>
 
-        <div class="modulo-card">
-          <i class="fa-solid fa-scale-balanced modulo-icon"></i>
-          <h3>Pesos, Medidas & Precificação</h3>
-          <p>Cálculo exato de gramatura para preenchimento (80g a 100g) e alongamento (100g a 300g). Como precificar com justiça valorizando o seu trabalho.</p>
-        </div>
+<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+<a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informações%20sobre%20o%20Curso." class="whatsapp-btn" target="_blank" rel="noopener">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
-        <div class="modulo-card">
-          <i class="fa-solid fa-arrows-rotate modulo-icon"></i>
-          <h3>Manutenção & Segurança</h3>
-          <p>Prazos ideais de manutenção (1 a 3 meses), técnicas de remoção segura, tratamento do couro cabeludo e preservação dos <i>baby hairs</i>.</p>
-        </div>
+<!-- SCRIPT PARA ABRIR E FECHAR O MENU NO CELULAR -->
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.toggle('active');
+  if (menu.classList.contains('active')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-xmark');
+  } else {
+    icon.classList.remove('fa-xmark');
+    icon.classList.add('fa-bars');
+  }
+}
 
-        <div class="modulo-card">
-          <i class="fa-solid fa-flask-vial modulo-icon"></i>
-          <h3>Procedimentos Químicos</h3>
-          <p>Saiba quando e como realizar tinturas e descolorações nas extensões de cabelos humanos com segurança sem danificar a fibra capilar.</p>
-        </div>
-
-        <div class="modulo-card">
-          <i class="fa-solid fa-award modulo-icon"></i>
-          <h3>Credibilidade Profissional</h3>
-          <p>Orientações de postura ética, aprimoramento contínuo e retenção de clientes no mercado promissor da beleza estética.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TÉCNICAS EM DESTAQUE -->
-  <section class="section-padding" style="background: var(--bg-card);">
-    <div class="container">
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-        <span class="gold-subtitle">Técnicas Práticas</span>
-        <h2 class="section-title">As Táticas Mais Procuradas do Mercado</h2>
-      </div>
-
-      <div class="tecnicas-container">
-        <!-- PONTO AMERICANO -->
-        <div class="tecnica-box">
-          <h3>Ponto Americano</h3>
-          <p>Técnica tradicional feita com cabelo tecido em metro ou à mão e costurada na base. Altamente procurada por seu excelente custo-benefício, segurança e resistência.</p>
-          <ul class="tecnica-features">
-            <li><i class="fa-solid fa-gem"></i> Permite amarrar o cabelo e praticar exercícios</li>
-            <li><i class="fa-solid fa-gem"></i> Liberdade para ir à praia, piscina e hidratar</li>
-            <li><i class="fa-solid fa-gem"></i> Indicado para todos os tipos de cabelo</li>
-            <li><i class="fa-solid fa-gem"></i> Manutenção estimada: 2 a 3 meses</li>
-          </ul>
-        </div>
-
-        <!-- INVISIBLE / TELA INVISÍVEL -->
-        <div class="tecnica-box">
-          <h3>Invisible / Tela Invisível</h3>
-          <p>Técnica moderna feita com tela adesiva, extremamente discreta e delicada. Ideal para clientes com cabelos ultra finos e sensíveis.</p>
-          <ul class="tecnica-features">
-            <li><i class="fa-solid fa-gem"></i> Acabamento ultra discreto e imperceptível</li>
-            <li><i class="fa-solid fa-gem"></i> Especial para fios finos e sensibilizados</li>
-            <li><i class="fa-solid fa-gem"></i> Protocolo especial pós-aplicação (48h sem lavar)</li>
-            <li><i class="fa-solid fa-gem"></i> Manutenção estimada: 1 a 2 meses</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA DE INSCRIÇÃO -->
-  <section class="cta-section section-padding">
-    <div class="container text-center">
-      <span class="gold-subtitle">Sua Carreira de Sucesso Começa Aqui</span>
-      <h2 class="section-title">Acredite! Você pode todas as coisas!</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 35px auto;">
-        Inscreva-se na próxima turma do Curso de Mega Hair da Mega Absolutta e transforme sua trajetória profissional no mercado da beleza.
-      </p>
-      <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Quero%20informações%20sobre%20as%20próximas%20turmas%20do%20Curso%20de%20Mega%20Hair." target="_blank" rel="noopener" class="btn-gold">Falar com a Equipe no WhatsApp</a>
-    </div>
-  </section>
-
-  <!-- FOOTER IDÊNTICO À HOME -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4 class="gold-text">MEGA ABSOLUTTA</h4>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">Transformando vidas e elevando a autoestima através de extensões de alta qualidade.</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="gold-text">Navegação</h4>
-          <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#sobre">Sobre Nós</a></li>
-            <li><a href="index.html#linhas">Linhas de Cabelos</a></li>
-            <li><a href="servico.html">Serviços</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 class="gold-text">Atendimento</h4>
-          <p style="color: var(--text-muted); font-size: 0.85rem;">Ribeirão Preto - SP & Araxá - MG</p>
-          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Seg a Sex: 08h às 18h</p>
-        </div>
-        <div class="footer-col">
-          <h4 class="gold-text">Redes Sociais</h4>
-          <a href="https://instagram.com/mega_absolutta" target="_blank" rel="noopener" style="color: var(--gold-primary); font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2026 MEGA ABSOLUTTA BRASIL — TODOS OS DIREITOS RESERVADOS</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-  <a href="https://api.whatsapp.com/send?phone=5516996207228&text=Ol%C3%A1!%20Gostaria%20de%20informações%20sobre%20o%20Curso." class="whatsapp-btn" target="_blank" rel="noopener">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
+function closeMenu() {
+  const menu = document.getElementById('navMenu');
+  const icon = document.getElementById('menuIcon');
+  menu.classList.remove('active');
+  icon.classList.remove('fa-xmark');
+  icon.classList.add('fa-bars');
+}
+</script>
 </body>
 </html>
